@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWaghralkar", "NewWaghralkar\NewWaghralkar.csproj", "{D872CE4D-BCD8-48A2-84A5-6B58516833C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWaghralkar.Data", "NewWaghralkar.Data\NewWaghralkar.Data.csproj", "{8492475C-B579-4444-ADD2-D5E718FF18BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D872CE4D-BCD8-48A2-84A5-6B58516833C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D872CE4D-BCD8-48A2-84A5-6B58516833C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D872CE4D-BCD8-48A2-84A5-6B58516833C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D872CE4D-BCD8-48A2-84A5-6B58516833C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8492475C-B579-4444-ADD2-D5E718FF18BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8492475C-B579-4444-ADD2-D5E718FF18BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8492475C-B579-4444-ADD2-D5E718FF18BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8492475C-B579-4444-ADD2-D5E718FF18BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE8F4296-FED9-4E1D-A5A3-C0A96EAD2D6E}
+	EndGlobalSection
+EndGlobal

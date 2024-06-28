@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WaghralkarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="user" />
+          </Key>
+          <Property Name="user" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PWD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Image1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand_Master">
+          <Key>
+            <PropertyRef Name="Brand_ID" />
+          </Key>
+          <Property Name="Brand_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Category_ID" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.Cart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+            <PropertyRef Name="Cust_Id" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Qty" />
+          </Key>
+          <Property Name="CartId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cust_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Item_ID" Type="bigint" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.Delivery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+            <PropertyRef Name="Invoice_Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Pin" />
+            <PropertyRef Name="Landmark" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Address" />
+          </Key>
+          <Property Name="Cust_Id" Type="bigint" Nullable="false" />
+          <Property Name="Invoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pin" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Landmark" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Amount" />
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Invoice__ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Delivery" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Cust_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.Issue_Master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Issue_Master">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+            <PropertyRef Name="Module_ID" />
+            <PropertyRef Name="Issue_Details" />
+            <PropertyRef Name="Visite_Charge" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Issue_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_ID" Type="bigint" Nullable="false" />
+          <Property Name="Issue_Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Visite_Charge" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemData">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Main_Category" Type="int" Nullable="false" />
+          <Property Name="Sub_Category1" Type="int" Nullable="false" />
+          <Property Name="Sub_Category2" Type="int" Nullable="false" />
+          <Property Name="Sub_Category3" Type="int" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="int" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="P_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="S_Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Specification" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pack" Type="int" Nullable="false" />
+          <Property Name="Unit" Type="int" Nullable="false" />
+          <Property Name="Start_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Data3" Type="nvarchar(max)" />
+          <Property Name="Data4" Type="nvarchar(max)" />
+          <Property Name="Data5" Type="nvarchar(max)" />
+          <Property Name="Data6" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data7" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data8" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data9" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data10" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data11" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data12" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data13" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data14" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MainCategory">
+          <Key>
+            <PropertyRef Name="Category_Name" />
+          </Key>
+          <Property Name="Main_Category_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mytable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="Date" Type="nvarchar" MaxLength="20" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Message" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.Order1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Order1">
+          <Key>
+            <PropertyRef Name="CartId" />
+            <PropertyRef Name="Invoice_Id" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="CartId" Type="bigint" Nullable="false" />
+          <Property Name="Invoice_Id" Type="bigint" Nullable="false" />
+          <Property Name="Item_ID" Type="bigint" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Photogallary">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="PhotoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Photo1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo2" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region_Master">
+          <Key>
+            <PropertyRef Name="Region_ID" />
+          </Key>
+          <Property Name="Region_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Region" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Cust_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cust_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Contact_No" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.Sitem_Master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sitem_Master">
+          <Key>
+            <PropertyRef Name="Sitem_ID" />
+            <PropertyRef Name="Module_ID" />
+            <PropertyRef Name="Sitem_Details" />
+            <PropertyRef Name="Sitem_Pprice" />
+            <PropertyRef Name="Sitem_Sprice" />
+            <PropertyRef Name="Sitem_Margin" />
+            <PropertyRef Name="Sitem_service_Amt" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Sitem_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_ID" Type="bigint" Nullable="false" />
+          <Property Name="Sitem_Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sitem_Pprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_Sprice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_Margin" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_service_Amt" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Size_Master">
+          <Key>
+            <PropertyRef Name="Size_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="bigint" Nullable="false" />
+          <Property Name="Size_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SpecialOffer">
+          <Key>
+            <PropertyRef Name="Offer_ID" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Offer_Details" />
+            <PropertyRef Name="Offer_Percentage" />
+            <PropertyRef Name="Offer_Date" />
+            <PropertyRef Name="Offer_Type" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Offer_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item_ID" Type="bigint" Nullable="false" />
+          <Property Name="Offer_Details" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Offer_Percentage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Offer_Date" Type="date" Nullable="false" />
+          <Property Name="Offer_Type" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sub_Category1">
+          <Key>
+            <PropertyRef Name="Category1_ID" />
+          </Key>
+          <Property Name="Category1_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Main_Category_ID" Type="bigint" Nullable="false" />
+          <Property Name="Category_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sub_Category2">
+          <Key>
+            <PropertyRef Name="Category2_ID" />
+          </Key>
+          <Property Name="Category2_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sub_Category1_ID" Type="bigint" Nullable="false" />
+          <Property Name="Category_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sub_Category3">
+          <Key>
+            <PropertyRef Name="Category3_ID" />
+          </Key>
+          <Property Name="Category3_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sub_Category2_ID" Type="bigint" Nullable="false" />
+          <Property Name="Category_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tax_Master">
+          <Key>
+            <PropertyRef Name="Tax_ID" />
+          </Key>
+          <Property Name="Tax_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="App_Form" Type="date" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type_Master">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data1" Type="nvarchar(max)" />
+          <Property Name="Data2" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Category_ID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Unit_Master">
+          <Key>
+            <PropertyRef Name="Unit_ID" />
+          </Key>
+          <Property Name="Unit_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Videogallery">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="VideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="UTubeurl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="WaghralkarModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand_Master" EntityType="Self.Brand_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemData" EntityType="Self.ItemData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainCategory" EntityType="Self.MainCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mytable" EntityType="Self.mytable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photogallary" EntityType="Self.Photogallary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region_Master" EntityType="Self.Region_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Size_Master" EntityType="Self.Size_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sub_Category1" EntityType="Self.Sub_Category1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sub_Category2" EntityType="Self.Sub_Category2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sub_Category3" EntityType="Self.Sub_Category3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tax_Master" EntityType="Self.Tax_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_Master" EntityType="Self.Type_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit_Master" EntityType="Self.Unit_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Videogallery" EntityType="Self.Videogallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cart" EntityType="Self.Cart" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Cart].[CartId] AS [CartId], 
+    [Cart].[Cust_Id] AS [Cust_Id], 
+    [Cart].[Item_ID] AS [Item_ID], 
+    [Cart].[Date] AS [Date], 
+    [Cart].[Qty] AS [Qty], 
+    [Cart].[Status] AS [Status], 
+    [Cart].[Amount] AS [Amount], 
+    [Cart].[Discount] AS [Discount], 
+    [Cart].[Tax] AS [Tax]
+    FROM [dbo].[Cart] AS [Cart]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Delivery" EntityType="Self.Delivery" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Delivery].[Cust_Id] AS [Cust_Id], 
+    [Delivery].[Invoice_Id] AS [Invoice_Id], 
+    [Delivery].[Name] AS [Name], 
+    [Delivery].[Pin] AS [Pin], 
+    [Delivery].[Landmark] AS [Landmark], 
+    [Delivery].[City] AS [City], 
+    [Delivery].[Address] AS [Address], 
+    [Delivery].[Status] AS [Status]
+    FROM [dbo].[Delivery] AS [Delivery]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Issue_Master" EntityType="Self.Issue_Master" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Issue_Master].[Issue_ID] AS [Issue_ID], 
+    [Issue_Master].[Module_ID] AS [Module_ID], 
+    [Issue_Master].[Issue_Details] AS [Issue_Details], 
+    [Issue_Master].[Visite_Charge] AS [Visite_Charge], 
+    [Issue_Master].[Data1] AS [Data1], 
+    [Issue_Master].[Status] AS [Status]
+    FROM [dbo].[Issue_Master] AS [Issue_Master]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Order1" EntityType="Self.Order1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Order1].[CartId] AS [CartId], 
+    [Order1].[Invoice_Id] AS [Invoice_Id], 
+    [Order1].[Item_ID] AS [Item_ID], 
+    [Order1].[Date] AS [Date], 
+    [Order1].[Status] AS [Status], 
+    [Order1].[Amount] AS [Amount], 
+    [Order1].[Discount] AS [Discount], 
+    [Order1].[Qty] AS [Qty], 
+    [Order1].[Tax] AS [Tax]
+    FROM [dbo].[Order1] AS [Order1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sitem_Master" EntityType="Self.Sitem_Master" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sitem_Master].[Sitem_ID] AS [Sitem_ID], 
+    [Sitem_Master].[Module_ID] AS [Module_ID], 
+    [Sitem_Master].[Sitem_Details] AS [Sitem_Details], 
+    [Sitem_Master].[Sitem_Pprice] AS [Sitem_Pprice], 
+    [Sitem_Master].[Sitem_Sprice] AS [Sitem_Sprice], 
+    [Sitem_Master].[Sitem_Margin] AS [Sitem_Margin], 
+    [Sitem_Master].[Sitem_service_Amt] AS [Sitem_service_Amt], 
+    [Sitem_Master].[Data1] AS [Data1], 
+    [Sitem_Master].[Status] AS [Status]
+    FROM [dbo].[Sitem_Master] AS [Sitem_Master]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SpecialOffer" EntityType="Self.SpecialOffer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SpecialOffer].[Offer_ID] AS [Offer_ID], 
+    [SpecialOffer].[Item_ID] AS [Item_ID], 
+    [SpecialOffer].[Offer_Details] AS [Offer_Details], 
+    [SpecialOffer].[Offer_Percentage] AS [Offer_Percentage], 
+    [SpecialOffer].[Offer_Date] AS [Offer_Date], 
+    [SpecialOffer].[Offer_Type] AS [Offer_Type], 
+    [SpecialOffer].[Status] AS [Status], 
+    [SpecialOffer].[Photo] AS [Photo]
+    FROM [dbo].[SpecialOffer] AS [SpecialOffer]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WaghralkarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="user" />
+          </Key>
+          <Property Name="user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand_Master">
+          <Key>
+            <PropertyRef Name="Brand_ID" />
+          </Key>
+          <Property Name="Brand_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Category_ID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Amount" />
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Invoice__ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Delivery" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cust_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemData">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Main_Category" Type="Int32" Nullable="false" />
+          <Property Name="Sub_Category1" Type="Int32" Nullable="false" />
+          <Property Name="Sub_Category2" Type="Int32" Nullable="false" />
+          <Property Name="Sub_Category3" Type="Int32" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="P_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="S_Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Specification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Pack" Type="Int32" Nullable="false" />
+          <Property Name="Unit" Type="Int32" Nullable="false" />
+          <Property Name="Start_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Data14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MainCategory">
+          <Key>
+            <PropertyRef Name="Category_Name" />
+          </Key>
+          <Property Name="Main_Category_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mytable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Photogallary">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="PhotoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region_Master">
+          <Key>
+            <PropertyRef Name="Region_ID" />
+          </Key>
+          <Property Name="Region_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Cust_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cust_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contact_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Size_Master">
+          <Key>
+            <PropertyRef Name="Size_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="Int64" Nullable="false" />
+          <Property Name="Size_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sub_Category1">
+          <Key>
+            <PropertyRef Name="Category1_ID" />
+          </Key>
+          <Property Name="Category1_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Main_Category_ID" Type="Int64" Nullable="false" />
+          <Property Name="Category_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sub_Category2">
+          <Key>
+            <PropertyRef Name="Category2_ID" />
+          </Key>
+          <Property Name="Category2_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Category1_ID" Type="Int64" Nullable="false" />
+          <Property Name="Category_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sub_Category3">
+          <Key>
+            <PropertyRef Name="Category3_ID" />
+          </Key>
+          <Property Name="Category3_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sub_Category2_ID" Type="Int64" Nullable="false" />
+          <Property Name="Category_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tax_Master">
+          <Key>
+            <PropertyRef Name="Tax_ID" />
+          </Key>
+          <Property Name="Tax_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="App_Form" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type_Master">
+          <Key>
+            <PropertyRef Name="Type_Id" />
+          </Key>
+          <Property Name="Type_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Data2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Category_ID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Unit_Master">
+          <Key>
+            <PropertyRef Name="Unit_ID" />
+          </Key>
+          <Property Name="Unit_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Videogallery">
+          <Key>
+            <PropertyRef Name="Title" />
+          </Key>
+          <Property Name="VideoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UTubeurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+            <PropertyRef Name="Cust_Id" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Qty" />
+          </Key>
+          <Property Name="CartId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cust_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Item_ID" Type="Int64" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+            <PropertyRef Name="Invoice_Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Pin" />
+            <PropertyRef Name="Landmark" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Address" />
+          </Key>
+          <Property Name="Cust_Id" Type="Int64" Nullable="false" />
+          <Property Name="Invoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pin" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Landmark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Issue_Master">
+          <Key>
+            <PropertyRef Name="Issue_ID" />
+            <PropertyRef Name="Module_ID" />
+            <PropertyRef Name="Issue_Details" />
+            <PropertyRef Name="Visite_Charge" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Issue_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_ID" Type="Int64" Nullable="false" />
+          <Property Name="Issue_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Visite_Charge" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order1">
+          <Key>
+            <PropertyRef Name="CartId" />
+            <PropertyRef Name="Invoice_Id" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="CartId" Type="Int64" Nullable="false" />
+          <Property Name="Invoice_Id" Type="Int64" Nullable="false" />
+          <Property Name="Item_ID" Type="Int64" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Sitem_Master">
+          <Key>
+            <PropertyRef Name="Sitem_ID" />
+            <PropertyRef Name="Module_ID" />
+            <PropertyRef Name="Sitem_Details" />
+            <PropertyRef Name="Sitem_Pprice" />
+            <PropertyRef Name="Sitem_Sprice" />
+            <PropertyRef Name="Sitem_Margin" />
+            <PropertyRef Name="Sitem_service_Amt" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Sitem_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_ID" Type="Int64" Nullable="false" />
+          <Property Name="Sitem_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sitem_Pprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_Sprice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_Margin" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sitem_service_Amt" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Data1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SpecialOffer">
+          <Key>
+            <PropertyRef Name="Offer_ID" />
+            <PropertyRef Name="Item_ID" />
+            <PropertyRef Name="Offer_Details" />
+            <PropertyRef Name="Offer_Percentage" />
+            <PropertyRef Name="Offer_Date" />
+            <PropertyRef Name="Offer_Type" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="Offer_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item_ID" Type="Int64" Nullable="false" />
+          <Property Name="Offer_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Offer_Percentage" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Offer_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Offer_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WaghralkarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="Awards" EntityType="Self.Award" />
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+          <EntitySet Name="Brand_Master" EntityType="Self.Brand_Master" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="ItemDatas" EntityType="Self.ItemData" />
+          <EntitySet Name="MainCategories" EntityType="Self.MainCategory" />
+          <EntitySet Name="mytables" EntityType="Self.mytable" />
+          <EntitySet Name="Photogallaries" EntityType="Self.Photogallary" />
+          <EntitySet Name="Region_Master" EntityType="Self.Region_Master" />
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+          <EntitySet Name="Size_Master" EntityType="Self.Size_Master" />
+          <EntitySet Name="Sub_Category1" EntityType="Self.Sub_Category1" />
+          <EntitySet Name="Sub_Category2" EntityType="Self.Sub_Category2" />
+          <EntitySet Name="Sub_Category3" EntityType="Self.Sub_Category3" />
+          <EntitySet Name="Tax_Master" EntityType="Self.Tax_Master" />
+          <EntitySet Name="Type_Master" EntityType="Self.Type_Master" />
+          <EntitySet Name="Unit_Master" EntityType="Self.Unit_Master" />
+          <EntitySet Name="Videogalleries" EntityType="Self.Videogallery" />
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Deliveries" EntityType="Self.Delivery" />
+          <EntitySet Name="Issue_Master" EntityType="Self.Issue_Master" />
+          <EntitySet Name="Order1" EntityType="Self.Order1" />
+          <EntitySet Name="Sitem_Master" EntityType="Self.Sitem_Master" />
+          <EntitySet Name="SpecialOffers" EntityType="Self.SpecialOffer" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WaghralkarModelStoreContainer" CdmEntityContainer="WaghralkarEntities">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="WaghralkarModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="WaghralkarModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="WaghralkarModel.Award">
+              <MappingFragment StoreEntitySet="Award">
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="WaghralkarModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Brand_Master">
+              <MappingFragment StoreEntitySet="Brand_Master">
+                <ScalarProperty Name="Brand_ID" ColumnName="Brand_ID" />
+                <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="WaghralkarModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Invoice__ID" ColumnName="Invoice__ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemDatas">
+            <EntityTypeMapping TypeName="WaghralkarModel.ItemData">
+              <MappingFragment StoreEntitySet="ItemData">
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Main_Category" ColumnName="Main_Category" />
+                <ScalarProperty Name="Sub_Category1" ColumnName="Sub_Category1" />
+                <ScalarProperty Name="Sub_Category2" ColumnName="Sub_Category2" />
+                <ScalarProperty Name="Sub_Category3" ColumnName="Sub_Category3" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="P_Price" ColumnName="P_Price" />
+                <ScalarProperty Name="S_Price" ColumnName="S_Price" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Data3" ColumnName="Data3" />
+                <ScalarProperty Name="Data4" ColumnName="Data4" />
+                <ScalarProperty Name="Data5" ColumnName="Data5" />
+                <ScalarProperty Name="Data6" ColumnName="Data6" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Data7" ColumnName="Data7" />
+                <ScalarProperty Name="Data8" ColumnName="Data8" />
+                <ScalarProperty Name="Data9" ColumnName="Data9" />
+                <ScalarProperty Name="Data10" ColumnName="Data10" />
+                <ScalarProperty Name="Data11" ColumnName="Data11" />
+                <ScalarProperty Name="Data12" ColumnName="Data12" />
+                <ScalarProperty Name="Data13" ColumnName="Data13" />
+                <ScalarProperty Name="Data14" ColumnName="Data14" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainCategories">
+            <EntityTypeMapping TypeName="WaghralkarModel.MainCategory">
+              <MappingFragment StoreEntitySet="MainCategory">
+                <ScalarProperty Name="Main_Category_ID" ColumnName="Main_Category_ID" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mytables">
+            <EntityTypeMapping TypeName="WaghralkarModel.mytable">
+              <MappingFragment StoreEntitySet="mytable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photogallaries">
+            <EntityTypeMapping TypeName="WaghralkarModel.Photogallary">
+              <MappingFragment StoreEntitySet="Photogallary">
+                <ScalarProperty Name="PhotoId" ColumnName="PhotoId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Photo1" ColumnName="Photo1" />
+                <ScalarProperty Name="Photo2" ColumnName="Photo2" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Region_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Region_Master">
+              <MappingFragment StoreEntitySet="Region_Master">
+                <ScalarProperty Name="Region_ID" ColumnName="Region_ID" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="WaghralkarModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Cust_Name" ColumnName="Cust_Name" />
+                <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Size_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Size_Master">
+              <MappingFragment StoreEntitySet="Size_Master">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="Size_ID" ColumnName="Size_ID" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sub_Category1">
+            <EntityTypeMapping TypeName="WaghralkarModel.Sub_Category1">
+              <MappingFragment StoreEntitySet="Sub_Category1">
+                <ScalarProperty Name="Category1_ID" ColumnName="Category1_ID" />
+                <ScalarProperty Name="Main_Category_ID" ColumnName="Main_Category_ID" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sub_Category2">
+            <EntityTypeMapping TypeName="WaghralkarModel.Sub_Category2">
+              <MappingFragment StoreEntitySet="Sub_Category2">
+                <ScalarProperty Name="Category2_ID" ColumnName="Category2_ID" />
+                <ScalarProperty Name="Sub_Category1_ID" ColumnName="Sub_Category1_ID" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sub_Category3">
+            <EntityTypeMapping TypeName="WaghralkarModel.Sub_Category3">
+              <MappingFragment StoreEntitySet="Sub_Category3">
+                <ScalarProperty Name="Category3_ID" ColumnName="Category3_ID" />
+                <ScalarProperty Name="Sub_Category2_ID" ColumnName="Sub_Category2_ID" />
+                <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tax_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Tax_Master">
+              <MappingFragment StoreEntitySet="Tax_Master">
+                <ScalarProperty Name="Tax_ID" ColumnName="Tax_ID" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="App_Form" ColumnName="App_Form" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Type_Master">
+              <MappingFragment StoreEntitySet="Type_Master">
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Data2" ColumnName="Data2" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unit_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Unit_Master">
+              <MappingFragment StoreEntitySet="Unit_Master">
+                <ScalarProperty Name="Unit_ID" ColumnName="Unit_ID" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videogalleries">
+            <EntityTypeMapping TypeName="WaghralkarModel.Videogallery">
+              <MappingFragment StoreEntitySet="Videogallery">
+                <ScalarProperty Name="VideoId" ColumnName="VideoId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UTubeurl" ColumnName="UTubeurl" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="WaghralkarModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deliveries">
+            <EntityTypeMapping TypeName="WaghralkarModel.Delivery">
+              <MappingFragment StoreEntitySet="Delivery">
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pin" ColumnName="Pin" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Issue_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Issue_Master">
+              <MappingFragment StoreEntitySet="Issue_Master">
+                <ScalarProperty Name="Issue_ID" ColumnName="Issue_ID" />
+                <ScalarProperty Name="Module_ID" ColumnName="Module_ID" />
+                <ScalarProperty Name="Issue_Details" ColumnName="Issue_Details" />
+                <ScalarProperty Name="Visite_Charge" ColumnName="Visite_Charge" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order1">
+            <EntityTypeMapping TypeName="WaghralkarModel.Order1">
+              <MappingFragment StoreEntitySet="Order1">
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="Invoice_Id" ColumnName="Invoice_Id" />
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sitem_Master">
+            <EntityTypeMapping TypeName="WaghralkarModel.Sitem_Master">
+              <MappingFragment StoreEntitySet="Sitem_Master">
+                <ScalarProperty Name="Sitem_ID" ColumnName="Sitem_ID" />
+                <ScalarProperty Name="Module_ID" ColumnName="Module_ID" />
+                <ScalarProperty Name="Sitem_Details" ColumnName="Sitem_Details" />
+                <ScalarProperty Name="Sitem_Pprice" ColumnName="Sitem_Pprice" />
+                <ScalarProperty Name="Sitem_Sprice" ColumnName="Sitem_Sprice" />
+                <ScalarProperty Name="Sitem_Margin" ColumnName="Sitem_Margin" />
+                <ScalarProperty Name="Sitem_service_Amt" ColumnName="Sitem_service_Amt" />
+                <ScalarProperty Name="Data1" ColumnName="Data1" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpecialOffers">
+            <EntityTypeMapping TypeName="WaghralkarModel.SpecialOffer">
+              <MappingFragment StoreEntitySet="SpecialOffer">
+                <ScalarProperty Name="Offer_ID" ColumnName="Offer_ID" />
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Offer_Details" ColumnName="Offer_Details" />
+                <ScalarProperty Name="Offer_Percentage" ColumnName="Offer_Percentage" />
+                <ScalarProperty Name="Offer_Date" ColumnName="Offer_Date" />
+                <ScalarProperty Name="Offer_Type" ColumnName="Offer_Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

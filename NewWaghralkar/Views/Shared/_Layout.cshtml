@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Waghralkar Ayurvedik Foundation | International Academy of Indian Medicine</title>
+    <link rel="stylesheet" href="~/Content/css/reset.css"> <!-- CSS reset -->
+    <link href="~/Content/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Ayurved Research,Waghralkar, Panchkarm, Doctor, Nagpur, India" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/custom.css" />
+    <script type="text/javascript" src="~/Content/js/modernizr.custom.79639.js"></script>
+    <!-- js for news -->
+    <script src="~/Content/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/pignose.layerslider.js"></script>
+    @*<script type="text/javascript">
+            //<![CDATA[
+            $(window).load(function () {
+                $('#visual').pignoseLayerSlider({
+                    play: '.btn-play',
+                    pause: '.btn-pause',
+                    next: '.btn-next',
+                    prev: '.btn-prev'
+                });
+            });
+            //]]>
+        </script>*@
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            $('#visual').pignoseLayerSlider({
+                play: '.btn-play',
+                pause: '.btn-pause',
+                next: '.btn-next',
+                prev: '.btn-prev'
+            });
+        });
+    </script>
+
+    <!-- /js for news -->
+    <!-- for smooth scrolling -->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- //for smooth scrolling -->
+
+</head>
+<body>
+    <div class="top-strip">
+        <div class="container-fluid">
+            <div class="social-icons">
+                <img src="~/Content/images/Logo.png"
+                     height="35px" width="280px" />
+            </div>
+            <div class="contact-info">
+                <ul>
+                    <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>0712-2250141, 2251021</li>
+                    <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:contact@waghralkarayurved.org">contact@waghralkarayurved.org</a></li>
+
+                </ul>
+            </div>
+            <!-- Large modal -->
+            <div class="selectpackage">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Packages</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title package-title" id="H2">
+                                    AYURVEDIK HEALTH CHECK UP PACKAGES
+                                </h4>
+                            </div>
+                            <div class="modal-body packages">
+                                <div class="col-md-4 text-center modal-align">
+                                    <div class="package">
+                                        <p>
+                                            Patient Admitted in the hospital:- Panchakarma & Physiotherapy treatment twice a day.
+                                        </p>
+                                        <i class="fa fa-heartbeat"></i>
+                                        <h4>DAY ADMISSION</h4>
+                                        <a href="booknow.aspx">Book Now</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center modal-align">
+                                    <div class="package">
+                                        <p>Panchakarma & Physiotherapy treatment either once or twice as per patients need and convenience. </p>
+                                        <i class="fa fa-medkit"></i>
+                                        <h4>OPD CHECKUP</h4>
+                                        <a href="booknow.aspx">Book Now</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center modal-align">
+                                    <div class="package">
+                                        <p>Music & Aroma Therapy, Nourishment facility, Herbal Garden, Recreation Center </p>
+                                        <i class="fa fa-user-md"></i>
+                                        <h4>SPECIAL THERAPY</h4>
+                                        <a href="booknow.aspx">Book Now</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('#myModal').modal('');
+                </script>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <nav class="navbar nav_bottom" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header nav_2">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                    Menu
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav nav_1">
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu drop_menu" role="menu">
+                            <li><a href="~/About/AboutHospital">About Hospital</a></li>
+                            <li><a href="~/About/Panchkarma">Panchkarma</a></li>
+                            <li><a href="~/About/Ayurveda">Ayurveda</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu drop_menu" role="menu">
+                            <li><a href="~/Services/Treatments">Treatments</a></li>
+                            <li><a href="~/Services/HospitalServices">Hospital Services</a></li>
+
+                            <li><a href="~/Services/Training">Training</a></li>
+
+                            <li><a href="~/Services/MusicAromaTherapy">Music & Aroma Therapy</a></li>
+                            <li><a href="~/Services/QuantumHealing">Quantum Healing</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallary<span class="caret"></span></a>
+                        <ul class="dropdown-menu drop_menu" role="menu">
+                            <li><a href="~/Gallary/PhotoGallary">PhotoGallary</a></li>
+                            <li><a href="~/Gallary/VideoGallary">VideoGallary</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Awards/AwardsIndex">Awards</a></li>
+                    <li><a href="~/News/NewsIndex">News</a></li>
+                    <li><a href="~/Blog/BlogIndex">BLOG</a></li>
+                    <li class="dropdown">
+                        <a href="http://shop.waghralkarayurved.org/" class="dropdown-toggle" data-toggle="dropdown">Shopping<span class="caret"></span></a>
+                        <ul class="dropdown-menu drop_menu" role="menu">
+                            <li><a href="http://shop.waghralkarayurved.org/">Products</a></li>
+                            <li><a href="http://shop.waghralkarayurved.org/">Books</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Contact/ContactIndex">CONTACT</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section class="about">
+        <div class="inner-banner demo-2 text-center">
+            <header class="logo">
+                <h1><a class="cd-logo link link--takiri" href="Default.aspx"><asp:Image ID="Image2" runat="server" ImageUrl="~/Content/images/00001.jpg" Width="150" Height="80"></asp:Image> <span>आयुर्वेद अमृतानाम  </span></a></h1>
+            </header>
+            <div id="breadcrumb_wrapper">
+                <div class="container">
+                    <h1>@ViewBag.Titlename</h1>
+                    @*<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>*@
+                </div>
+            </div>
+        </div>
+        <div class="about-grids">
+            @*<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>*@
+        </div>
+    </section>
+    <!--<div class="demo-2">
+
+
+        <div id="visual">
+            <div class="slide-visual slideanim">-->
+    <!-- Slide Image Area (1000 x 424) -->
+    <!--<ul class="slide-group">
+        <li><img src="~/Content/images/news1.jpg" alt="Dummy Image" class="img-responsive" /></li>
+        <li><img src="~/Content/images/news2.jpg" alt="Dummy Image" class="img-responsive" /></li>
+        <li><img src="~/Content/images/news3.jpg" alt="Dummy Image" class="img-responsive" /></li>
+        <li><img src="~/Content/images/news4.jpg" alt="Dummy Image" class="img-responsive" /></li>
+        <li><img src="~/Content/images/news5.jpg" alt="Dummy Image" class="img-responsive" /></li>
+    </ul>-->
+    <!-- Slide Description Image Area (316 x 328) -->
+    <!--<div class="script-wrap">
+                    <ul class="script-group">
+                        <li><div class="inner-script"><img src="~/Content/images/news1-1.jpg" alt="Dummy Image" class="img-responsive" /></div></li>
+                        <li><div class="inner-script"><img src="~/Content/images/news2-2.jpg" alt="Dummy Image" class="img-responsive" /></div></li>
+                        <li><div class="inner-script"><img src="~/Content/images/news3-3.jpg" alt="Dummy Image" class="img-responsive" /></div></li>
+                        <li><div class="inner-script"><img src="~/Content/images/news4-4.jpg" alt="Dummy Image" class="img-responsive" /></div></li>
+                        <li><div class="inner-script"><img src="~/Content/images/news5-5.jpg" alt="Dummy Image" class="img-responsive" /></div></li>
+                    </ul>
+                    <div class="slide-controller">
+                        <a href="#" class="btn-prev"><img src="~/Content/images/btn_prev.png" alt="Prev Slide" /></a>
+                        <a href="#" class="btn-play"><img src="~/Content/images/btn_play.png" alt="Start Slide" /></a>
+                        <a href="#" class="btn-pause"><img src="~/Content/images/btn_pause.png" alt="Pause Slide" /></a>
+                        <a href="#" class="btn-next"><img src="~/Content/images/btn_next.png" alt="Next Slide" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">-->
+    @RenderBody()
+
+    <!-- book an appointment -->
+    <div class="appointment">
+        <div class="container">
+            <div class="col-md-9 appointment-left">
+                <h3>FREE APPOINTMENT BOOKING</h3>
+                <p>Book your Online Appointment for Consulting.</p>
+            </div>
+            <div class="col-md-3 appointment-right">
+                <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
+                <div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                    <div class="modal-dialog dialog_3">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    <div class="head_4">
+                                        <h3>Make An appointment Now</h3>
+                                        <p>
+                                            Id : <asp:Label ID="lblid" Text=""></asp:Label>
+                                        </p>
+                                    </div>
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div name="row" class="register">
+                                    <asp:TextBox name="name" id="txtname" placeholder="Name" required=""></asp:TextBox>
+                                    <asp:TextBox name="email id" id="txtemailid" placeholder="Email id" required=""></asp:TextBox>
+                                    <asp:TextBox name="mobile number" id="txtmob" placeholder="Mobile Number" required=""></asp:TextBox>
+                                    <asp:TextBox id="txtcity" placeholder="City" required=""></asp:TextBox>
+                                    <asp:RadioButtonList ID="RadioButtonList1" class="form-control "
+                                                         RepeatDirection="Horizontal" RepeatLayout="Flow" Width="200px">
+                                        <asp:ListItem>Male</asp:ListItem>
+                                        <asp:ListItem>Female</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                    <asp:TextBox class="date" id="datepicker" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=""></asp:TextBox>
+                                    <asp:TextBox type="text" id="txtmsg" required=""
+                                                 TextMode="MultiLine"></asp:TextBox>
+                                    <asp:Button ID="btnsubmit" Text="Submit" class="btn-success"
+                                                onclick="btnsubmit_Click" />
+                                </div>
+                            </div>
+                            <!---start-date-piker---->
+                            <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                            <script src="~/Content/js/jquery-ui.js"></script>
+                            <script>
+                                $(function () {
+                                    $("#datepicker").datepicker();
+                                });
+                            </script>
+                            <!---/End-date-piker---->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //book an appointment -->
+    <!-- footer -->
+    <footer>
+        <div class="footer-grids">
+            <div class="container">
+                <div class="col-md-3 footer one">
+                    <h3>About Hospital</h3>
+                    <p>
+                        Hospital is unique in the way that it caters to the needs
+                        of every patient. It comprises Panchakarma Department,the Mind and Body Centre, Yoga and Mediation Centre,
+                        air-conditined and well-equipped rooms with all the latest gadgets. With the facility of
+                        CCTV,the doctor can attend to the patients constantly.
+                    </p> <p class="adam">- Dr. Ranjana Waghralkar</p>
+                    <div class="clear"></div>
+                </div>
+                <div class="col-md-3 footer one tweet">
+                    <h3>Tweets</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                वाघ्रळकर हॉस्पिटल मध्ये पंचकर्म सुविधा खूपच चांगली आहे
+                                <i>Sachin Mahore/i>
+                            </a>
+                            <span>
+                                About 15 days ago<span>
+                                </span>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Quantaum Healing is good for Readers of Ayurveda
+                                <i>Rahul Balinge</i>
+                            </a>
+                            <span>
+                                About 19 days ago<span>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer two">
+                    <h3>Keep Connected</h3>
+                    <ul>
+                        <li><a class="fb" href="#"><i class="fa fa-facebook"></i>Like us on Facebook</a></li>
+                        <li><a class="fb1" href="#"><i class="fa fa-twitter"></i>Follow us on Twitter</a></li>
+                        <li><a class="fb2" href="#"><i class="fa fa-google-plus"></i>Add us on Google Plus</a></li>
+                        <li><a class="fb3" href="#"><i class="fa fa-dribbble"></i>Follow us on Dribbble</a></li>
+                        <li><a class="fb4" href="#"><i class="fa fa-pinterest-p"></i>Follow us on Pinterest</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer three">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i><p>Waghralkar Ayurved Hospital & Research Center, <span>47, West Samarth Nagar, Ajani Square</span>Nagpur - 440015(MS) India</p><div class="clearfix"></div> </li>
+                        <li><i class="fa fa-phone"></i><p>0712 2250141</p> <div class="clearfix"></div> </li>
+                        <li><i class="fa fa-envelope-o"></i><a href="mailto:contact@waghralkarayurved.org">contact@waghralkarayurved.org</a> <div class="clearfix"></div></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- maps -->
+        <!-- news letter -->
+        <div class="subscribe text-center">
+            <div class="container">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Quantum Healing Magzine</p>
+
+                <input class="user" type="text">
+                <input type="submit" class="btn-danger btn" value="Subscribe">
+
+                <p class="spam">We never share your information or use it to spam you</p>
+            </div>
+        </div>
+        <!-- //news letter -->
+        <div class="copy-right-grids">
+            <div class="container">
+                <div class="copy-left">
+                    <p class="footer-gd">© 2016 Waghralkar. All Rights Reserved | Design by <a href="https://esankalp.com/" target="_blank">eSankalp</a></p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

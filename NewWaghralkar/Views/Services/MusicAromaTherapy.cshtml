@@ -3,15 +3,43 @@
     ViewBag.Title = "MusicAromaTherapy";
 }
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-    <h2>MUSIC THERAPY</h2>
-</asp:Content>
+@*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
+    <img src="~/Content/images/logoIAIM.png" />
+        <h2>MUSIC THERAPY</h2>
+    </asp:Content>*@
+
+<section class="about">
+    <div class="inner-banner demo-2 text-center">
+        <header class="logo">
+            <img src="~/Content/images/logoIAIM.png" style="width:150px; height:80px; position:absolute; top:0; left: 0;" />
+        </header>
+        <div id="breadcrumb_wrapper">
+            <div class="container">
+                <style>
+                    h1 {
+                        font-family: "Time new roman";
+                        letter-spacing: normal;
+                    }
+                </style>
+                <h1>MUSIC THERAPY</h1>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    <div class="about-grids">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</section>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="terms">
         <div class="container">
 
-            <h6>IMPORTANCE OF MUSIC IN DAY-TO-DAY LIFE</h6>
+            <h6><font color="Purple">IMPORTANCE OF MUSIC IN DAY-TO-DAY LIFE</font></h6>
             <p>
+            <p class="MsoNormal" style="text-align: justify">
+
                 Music is closely associated with nature. It will also not be wrong to say that the origin of nature is through sound. And atoms always establish communication with each other.
                 Wherever there is motion there always is a sound, states the law of science. And in absence of sound, the nature would not have been created. This slows the importance of sound in the creation of this nature. And if all these facts are to be interlinked, one thing emerges very clear- that the music that has its origin in some will always remain a boon to the human being as it helps establish communication with each other with a touch of softness.
                 The origin of Indian music finds its roots in the principle of creativity. Indian music always attaches importance to calm and thoughtful emotions, while the western music encourages provocative emotions. In the ancient times. The Vedic religion, was spread in the entire world which had no castes, religions and creeds as its base. And this tradition was maintained in Bharat. The roots of Vedic culture has been deeply rooted in our land as it advocated clam and thoughtful feelings.
@@ -27,7 +55,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
-                                <span>&#8594;</span>PROCEDURE & INSTRUCTIONS FOR ANDHARV VED MUSIC THERAPY
+                                <span>&#8594;</span><font color="Purple">PROCEDURE & INSTRUCTIONS FOR ANDHARV VED MUSIC THERAPY</font>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse">
@@ -149,7 +177,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title" data-toggle="collapse" data-target="#collapseTwo">
-                                <span>&#8594;</span> DISEASE PACIFYING RAGAS
+                                <span>&#8594;</span> <font color="Purple">DISEASE PACIFYING RAGAS</font>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse">
@@ -296,17 +324,17 @@
 
                     <!-- Third Panel -->
                     <!--	<div class="panel panel-default">
-                            <div class="panel-heading">
-                                 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">
-                                    <span>&#8594;</span> CAP
-                                 </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                                </div>
-                            </div>
-                        </div>-->
+                    <div class="panel-heading">
+                         <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">
+                            <span>&#8594;</span> CAP
+                         </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                        </div>
+                    </div>
+                </div>-->
                 </div>
             </div>
         </div>

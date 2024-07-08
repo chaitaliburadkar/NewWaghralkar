@@ -179,6 +179,7 @@
     <Content Include="Content\css-2\jqvmap.min.css" />
     <Content Include="Content\css-2\plugins.css" />
     <Content Include="Content\css-2\style.css" />
+    <Content Include="Content\CSS-3.css" />
     <Content Include="Content\css\bootstrap-3.1.1.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\custom.css" />
@@ -301,6 +302,7 @@
     <Content Include="Content\images\ins8.jpg" />
     <Content Include="Content\images\ins9.jpg" />
     <Content Include="Content\images\instrument.jpg" />
+    <Content Include="Content\images\JLordDhanvantari.png" />
     <Content Include="Content\images\kkkk.jpg" />
     <Content Include="Content\images\l1.jpg" />
     <Content Include="Content\images\l10.jpg" />

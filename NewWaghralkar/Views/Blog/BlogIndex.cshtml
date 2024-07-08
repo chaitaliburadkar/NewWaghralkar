@@ -6,8 +6,32 @@
 @*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <h2>Blogs</h2>
 </asp:Content>*@
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
+<section class="about">
+    <div class="inner-banner demo-2 text-center">
+        <header class="logo">
+            <img src="~/Content/images/logoIAIM.png" style="width:150px; height:80px; position:absolute; top:0; left: 0;" />
+        </header>
+        <div id="breadcrumb_wrapper">
+            <div class="container">
+                <style>
+                    h1 {
+                        font-family: "Time new roman";
+                        letter-spacing: normal;
+                    }
+                </style>
+                <h1>BLOGS</h1>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    <div class="about-grids">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</section>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container">
 

@@ -15,6 +15,7 @@ namespace NewWaghralkar.Controllers
         }
         public ActionResult AboutHospital()
         {
+            
             return View();
         }
         public ActionResult Panchkarma()

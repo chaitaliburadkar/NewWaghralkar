@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\AwardsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\GallaryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -408,6 +410,7 @@
     <Content Include="Content\js\numscroller-1.0.js" />
     <Content Include="Content\js\pignose.layerslider.js" />
     <Content Include="Content\js\tabs.js" />
+    <Content Include="Content\pages\Appointment.js" />
     <Content Include="Content\test\aspnet\test.aspx" />
     <Content Include="Content\test\aspnet\trace_info.aspx" />
     <Content Include="Content\test\asp\test_mail.asp" />
@@ -492,6 +495,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Slider\" />
     <Folder Include="Content\test\aspnet_client\system_web\4_0_30319\" />
+    <Folder Include="Views\Appointment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

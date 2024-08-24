@@ -1,11 +1,15 @@
 ﻿
 @{
     ViewBag.Title = "BlogIndex";
+
 }
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/Blog.js"></script>
+
 
 @*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-    <h2>Blogs</h2>
-</asp:Content>*@
+        <h2>Blogs</h2>
+    </asp:Content>*@
 
 <section class="about">
     <div class="inner-banner demo-2 text-center">
@@ -31,118 +35,161 @@
     </div>
 </section>
 
+
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <div class="container">
-
-        <div class="bolg-posts">
+        <div class="bolg-posts" id="Blogs">
             <div class="col-md-12 blog-top">
-                <div class="blog-in">
-                    <asp:DataList ID="DataList1" runat="server">
-                        <ItemTemplate>
-                            <div class="container">
-                                <div class="col-sm-12">
-
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <a href="single.html" class="blog-post"> <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("Image1","~/img/{0}") %>' /></a></a>
+                @*<div class="blog-in">
+                    <div class="container" >
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-2"><br /><br />
+                                    <img src="src='../Content/images/" style="width: 600px; height: 530px; " />
+                                </div>
+                                <div class="col-sm-10 ">
+                                    <div class="blog-grid pull-right ">
+                                        <div class="date">
+                                            <span class="date-in"><i class="fa fa-calendar"></i>02/7/2019></span>
+                                            <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
+                                            <div class="clearfix"> </div>
                                         </div>
-                                        <div class="col-sm-12 ">
-                                            <div class="blog-grid">
-                                                <div class="date">
-                                                    <span class="date-in"><i class="fa fa-calendar"></i>02/7/2019></span>
-                                                    <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
-                                                    <div class="clearfix"> </div>
-                                                </div>
-                                                <h3><a href="single.html">UNDERSTANDING THE html5 SUBDOSHAS OF PITTA</a></h3>
-                                                <p>According to Ayurveda, the body is governed by three different elemental characteristics, or doshas: Vata (associated with wind and air characteristics of the body), Pitta (associated with fire and water characteristics of the body), and Kapha (associated with earth and water characteristics of the body). Every one of us contains a unique combination of these three doshas, which influence everything from the shape of our bodies to our digestion, sleep patterns, skin tone, emotions, and intellect. Within each dosha are five distinct subdoshas that govern specific parts of the body and their functioning. In this article, we’ll focus on the subdoshas of Pitta.</p>
-
-                                                <a href="~/Content/BlogDet.aspx" class="smore">READ MORE</a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
+                                        <h3><a href="single.html">UNDERSTANDING THE html5 SUBDOSHAS OF PITTA</a></h3>
+                                        <p>According to Ayurveda, the body is governed by three different elemental characteristics, or doshas: Vata (associated with wind and air characteristics of the body), Pitta (associated with fire and water characteristics of the body), and Kapha (associated with earth and water characteristics of the body). Every one of us contains a unique combination of these three doshas, which influence everything from the shape of our bodies to our digestion, sleep patterns, skin tone, emotions, and intellect. Within each dosha are five distinct subdoshas that govern specific parts of the body and their functioning. In this article, we’ll focus on the subdoshas of Pitta.</p>
+                                        <a href="~/About/Ayurveda" class="smore">READ MORE</a>
                                     </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-
-                            <div class="container">
-                                <div class="col-sm-12">
-
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <a href="single.html" class="blog-post"> <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("Image1","~/img/{0}") %>' /></a></a>
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class="blog-grid">
-                                                <div class="date">
-                                                    <span class="date-in"><i class="fa fa-calendar"></i>Jan 2024</span>
-                                                    <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
-                                                    <div class="clearfix"> </div>
-                                                </div>
-                                                <h3><a href="single.html">QUANTUM HEALING</a></h3>
-                                                <p>Quantum Healing Ayurvidic Marathi Masik</p>
-                                                <a href="~/Content/BlogDet.aspx" class="smore">READ MORE</a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="col-sm-12">
-
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <a href="single.html" class="blog-post"> <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("Image1","~/img/{0}") %>' /></a></a>
-                                        </div>
-                                        <div class="col-sm-12 ">
-                                            <div class="blog-grid">
-                                                <div class="date">
-                                                    <span class="date-in"><i class="fa fa-calendar"></i>06/12/2016</span>
-                                                    <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
-                                                    <div class="clearfix"> </div>
-                                                </div>
-                                                <h3><a href="single.html">आयुर्वेदिक वनस्पती व उपचार</a></h3>
-                                                <p>
-                                                    १- पिपंळ - याला ' बोधीवृक्ष ' म्हणतात. गौतम बुध्दांना याच झाडाखाली आत्मज्ञान प्राप्त झाले होत. हवा शुध्दकरण्यासाठी हे एकच झाड एअरकुलर सिस्टीमच्या पाचपट अधिक काम करते. याच्या पानांत औषधी गुणधर्म असतात म्हणून आदिवासी भागात या पानांवर मुलांना जेऊ घातले जाते. पिपंळाची लाख (राख) खडीसाखरेबरोबर दिल्यास चांगली झोप लागते. २ - केवडा - ही वनस्पती समुद्र किनार्‍यावर मोठया प्रमाणात आढळते. ही वनस्पती थायरॉईडच्या दोषावर गुणकारी ठरते. ३ - हादगा - हादग्याला आपण ' अगस्ती ' म्हणूनही ओळखतो. याच्या फुलांची भजी छान लागतात. या फुलात अनेक जीवनसत्वांचा खजिना आहे. हा वृक्ष मध्यम आकाराचा आहे. ४ - बोर - बोराच्या बियांचे चुर्ण चेहर्‍यांवर लावल्यास पुटकुळया जातात. मध्यम आकाराचा हा काटेरी वृक्ष डोळे जळणे , तापावरील दाह यासाठी उपयुक्त ठरतो.
-                                                </p>
-                                                <a href="~/Content/BlogDet.aspx" class="smore">READ MORE</a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                </div>
-                </ItemTemplate>
-                </asp:DataList>
-
-
-
-
+                        </div>
+                    </div>
+                </div>*@
             </div>
-
-            <div class="clearfix"> </div>
-            <ul class="start">
-                <li><a href="#"><span class="prev">Prev</span></a></li>
-                <li><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><span>.....</span></li>
-                <li><a href="#">12</a></li>
-                <li><a href="#" class="next">Next</a></li>
-            </ul>
         </div>
     </div>
 
+
+    <br />
+    <br />
+    <div class="container">
+            <div class="bolg-posts">
+                <div class="col-md-12 blog-top">
+                    <div class="blog-in">
+                        <asp:DataList ID="DataList1" runat="server">
+                            <ItemTemplate>
+                                <div class="container">
+                                    </br></br>
+                                    <div class="col-sm-12">
+
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="~/Content/images/ser5.jpg" style="width: 600px; height: 400px; " />
+                                            </div>
+                                            <div class="col-sm-10 ">
+                                                <div class="blog-grid pull-right ">
+                                                    <div class="date">
+                                                        <span class="date-in"><i class="fa fa-calendar"></i>Jan 2024</span>
+                                                        <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
+                                                        <div class="clearfix"> </div>
+                                                    </div>
+                                                    <h3><a href="single.html">QUANTUM HEALING</a></h3>
+                                                    <p>Quantum Healing Ayurvidic Marathi Masik</p>
+                                                    <a href="~/Services/QuantumHealing" class="smore">READ MORE</a>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div></br></br>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="container">
+            <div class="bolg-posts">
+                <div class="col-md-12 blog-top">
+                    <div class="blog-in">
+                        <asp:DataList ID="DataList1" runat="server">
+                            <ItemTemplate>
+                                <div class="container">
+                                    </br></br>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="~/Content/images/99-3.jpg" style="width: 600px; height: 500px; " />
+                                            </div>
+                                            <div class="col-sm-10 ">
+                                                <div class="blog-grid pull-right ">
+                                                    <div class="date">
+                                                        <span class="date-in"><i class="fa fa-calendar"></i>06/12/2016</span>
+                                                        <a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
+                                                        <div class="clearfix"> </div>
+                                                    </div>
+                                                    <h3><a href="single.html">आयुर्वेदिक वनस्पती व उपचार</a></h3>
+                                                    <p>
+                                                        १- पिपंळ - याला ' बोधीवृक्ष ' म्हणतात. गौतम बुध्दांना याच झाडाखाली आत्मज्ञान प्राप्त झाले होत. हवा शुध्दकरण्यासाठी हे एकच झाड एअरकुलर सिस्टीमच्या पाचपट अधिक काम करते. याच्या पानांत औषधी गुणधर्म असतात म्हणून आदिवासी भागात या पानांवर मुलांना जेऊ घातले जाते. पिपंळाची लाख (राख) खडीसाखरेबरोबर दिल्यास चांगली झोप लागते. २ - केवडा - ही वनस्पती समुद्र किनार्‍यावर मोठया प्रमाणात आढळते. ही वनस्पती थायरॉईडच्या दोषावर गुणकारी ठरते. ३ - हादगा - हादग्याला आपण ' अगस्ती ' म्हणूनही ओळखतो. याच्या फुलांची भजी छान लागतात. या फुलात अनेक जीवनसत्वांचा खजिना आहे. हा वृक्ष मध्यम आकाराचा आहे. ४ - बोर - बोराच्या बियांचे चुर्ण चेहर्‍यांवर लावल्यास पुटकुळया जातात. मध्यम आकाराचा हा काटेरी वृक्ष डोळे जळणे , तापावरील दाह यासाठी उपयुक्त ठरतो.
+                                                    </p>
+                                                    <a href="~/About/Panchkarma" class="smore">READ MORE</a>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></br></br>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </br></br> </br></br>
+
+
+    <div class="clearfix"> </div>
+    <ul class="start">
+        <li><a href="#"><span class="prev">Prev</span></a></li>
+        <li><span>1</span></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><span>.....</span></li>
+        <li><a href="#">12</a></li>
+        <li><a href="#" class="next">Next</a></li>
+    </ul>
+    </div>
+    </div>
+
 </asp:Content>
-</br></br>
+    </br></br>
+
+@*<table id="Blogs" class=" table table-bordered  ">
+    <thead class=" text-white bg-dark ">
+        <tr>
+            <th> Srno </th>
+            <th> ActiveId </th>
+            <th> Title </th>
+            <th> Details </th>
+            <th> Image1</th>
+            <th> Image2 </th>
+            <th> Type </th>
+            <th> Date </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>*@
+
+
 
 
 

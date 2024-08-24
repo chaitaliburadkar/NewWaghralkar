@@ -51,5 +51,10 @@ namespace NewWaghralkar.Data
         public virtual DbSet<Order1> Order1 { get; set; }
         public virtual DbSet<Sitem_Master> Sitem_Master { get; set; }
         public virtual DbSet<SpecialOffer> SpecialOffers { get; set; }
+        public virtual DbSet<tblcontact> tblcontacts { get; set; }
+        public virtual DbSet<BookNow> BookNows { get; set; }
+        public virtual DbSet<mytable1> mytables1 { get; set; }
+        public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<tbl_AddNews> tbl_AddNews { get; set; }
     }
 }

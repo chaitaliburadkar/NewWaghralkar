@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "AppointmentIndex";
+    Layout = "~/Views/Shared/AdminLayout .cshtml";
+}
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/pages/Appointment.js"></script>
+
+<section class="content-header" style="margin-left:20px">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    View Appointment
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Appointment</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content" style="margin-left:20px">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="Appointment" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email </th>
+                                <th>City</th>
+                                <th>Mobile</th>
+                                <th>Date</th>
+                                <th>Gender</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

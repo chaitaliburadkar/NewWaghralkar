@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "NewsDetailsIndex";
+    Layout = "~/Views/Shared/AdminLayout .cshtml";
+}
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/News.js"></script>
+
+
+<h2>RedirectdetailsIndex</h2>
+<input type="hidden" value="@ViewBag.Id" id="hdnid" />
+
+
+<div class="container">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <label><b>Enter_News_Title:-</b></label>
+                <span id="txtTitle"></span>
+            </div>
+            <div class="col-sm-6">
+                <label><b>Type:-</b></label>
+                <span id="txtType"></span>&nbsp;&nbsp;
+
+                <label><b>Enter_News_Details:-</b></label>
+                <span id="txtDetails"></span>
+            </div>
+            <div class="col-sm-6">
+                <label><b>Date:-</b></label>
+                <span id="date"></span>&nbsp;&nbsp;
+
+                <label><b>Choose1File:-</b></label>
+                <span id="txtImage1"></span>
+            </div>
+            <div class="col-sm-6">
+                <label><b>Choose2File:-</b></label>
+                <span id="txtImage2"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

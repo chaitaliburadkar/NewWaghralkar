@@ -28,6 +28,8 @@
     <!-- js for news -->
     <script src="~/Content/js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="~/Content/js/pignose.layerslider.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+    <script src="~/Content/BookNow.js"></script>
     @*<script type="text/javascript">
             //<![CDATA[
             $(window).load(function () {
@@ -82,6 +84,7 @@
             </div>
             <!-- Large modal -->
             <div class="selectpackage">
+                <button<li><a href="~/Multiuser/MultiuserIndex" class="btn btn-primary" data-target="#myModal">Login</a></li></button>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Packages</button>
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -102,7 +105,73 @@
                                         </p>
                                         <i class="fa fa-heartbeat"></i>
                                         <h4>DAY ADMISSION</h4>
-                                        <a href="booknow.aspx">Book Now</a>
+
+                                        <a href="#" class="btn btn-default btn-default_2 pull-center" data-toggle="modal" data-target="#applyModal_7">Book Now</a><br /><br />
+
+
+                                        <div class="modal fade" id="applyModal_7" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog dialog_3">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        <h4 class="modal-title" id="H1">
+                                                            <div class="head_4">
+                                                                <h3>
+                                                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Book Now</span>
+                                                                </h3>
+                                                            </div>
+                                                        </h4>
+                                                        <div class="modal-body">
+                                                            <div name="row" class="register">
+                                                                <div class="table table-striped" ">
+                                                                    <center>
+                                                                        <input type="hidden" id="hdnId" />
+
+                                                                        <label><font color="purple"><b>Name -</b></font></label>
+                                                                        <input type="text" id="txtName" class="form-control" placeholder=" Enter Your Name" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Email Id -</b></font></label>
+                                                                        <input type="text" id="txtEmail" class="form-control" placeholder=" Enter Your EmailId" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Mobile No -</b></font></label>
+                                                                        <input type="number" id="txtMobile" class="form-control" placeholder=" Enter Your MobileNo" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>City -</b></font></label>
+                                                                        <input type="text" id="txtCity" class="form-control" placeholder=" Enter Your City" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Gender -</b></font></label>
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Male</label>
+
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Female</label><br /><br />
+
+                                                                        <label><font color="purple"><b>Appointment Date -</b></font></label>
+                                                                        <input type="date" id="txtAppointment" class="form-control" placeholder=" Enter Your Appointment Date" style="width:300px" />
+                                                                        <br />
+
+                                                                        <input type="button" class="btn btn-success" onclick="Savereg()" value="Submit" style="width:100px" />
+                                                                        <br />
+                                                                        <br />
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!---start-date-piker---->
+                                                    <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                    <script src="~/Content/js/jquery-ui.js"></script>
+                                                    @*<!---/End-date-piker---->*@
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-center modal-align">
@@ -110,7 +179,73 @@
                                         <p>Panchakarma & Physiotherapy treatment either once or twice as per patients need and convenience. </p>
                                         <i class="fa fa-medkit"></i>
                                         <h4>OPD CHECKUP</h4>
-                                        <a href="booknow.aspx">Book Now</a>
+                                        <center>
+                                            <a href="#" class="btn btn-default btn-default_2 pull-center" data-toggle="modal" data-target="#applyModal_8">Book Now</a><br /><br />
+                                        </center>
+
+                                        <div class="modal fade" id="applyModal_8" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog dialog_3">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        <h4 class="modal-title" id="H1">
+                                                            <div class="head_4">
+                                                                <h3>
+                                                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Book Now</span>
+                                                                </h3>
+                                                            </div>
+                                                        </h4>
+                                                        <div class="modal-body">
+                                                            <div name="row" class="register">
+                                                                <div class="table table-striped" ">
+                                                                    <center>
+                                                                        <input type="hidden" id="hdnId" />
+
+                                                                        <label><font color="purple"><b>Name -</b></font></label>
+                                                                        <input type="text" id="txtName" class="form-control" placeholder=" Enter Your Name" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>EmailId -</b></font></label>
+                                                                        <input type="text" id="txtEmail" class="form-control" placeholder=" Enter Your Email Id" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>MobileNo -</b></font></label>
+                                                                        <input type="number" id="txtMobile" class="form-control" placeholder=" Enter Your Mobile No" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>City -</b></font></label>
+                                                                        <input type="text" id="txtCity" class="form-control" placeholder=" Enter Your City" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Gender -</b></font></label>
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Male</label>
+
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Female</label><br /><br />
+
+                                                                        <label><font color="purple"><b>Appointment Date -</b></font></label>
+                                                                        <input type="date" id="txtAppointment" class="form-control" placeholder=" Enter Your Appointment Date" style="width:300px" />
+                                                                        <br />
+
+                                                                        <input type="button" class="btn btn-success" onclick="Savereg()" value="Submit" style="width:100px" />
+                                                                        <br />
+                                                                        <br />
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!---start-date-piker---->
+                                                    <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                    <script src="~/Content/js/jquery-ui.js"></script>
+                                                    @*<!---/End-date-piker---->*@
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-center modal-align">
@@ -118,7 +253,73 @@
                                         <p>Music & Aroma Therapy, Nourishment facility, Herbal Garden, Recreation Center </p>
                                         <i class="fa fa-user-md"></i>
                                         <h4>SPECIAL THERAPY</h4>
-                                        <a href="booknow.aspx">Book Now</a>
+                                        <center>
+                                            <a href="#" class="btn btn-default btn-default_2 pull-center" data-toggle="modal" data-target="#applyModal_9">Book Now</a><br /><br />
+                                        </center>
+
+                                        <div class="modal fade" id="applyModal_9" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog dialog_3">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        <h4 class="modal-title" id="H1">
+                                                            <div class="head_4">
+                                                                <h3>
+                                                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Book Now</span>
+                                                                </h3>
+                                                            </div>
+                                                        </h4>
+                                                        <div class="modal-body">
+                                                            <div name="row" class="register">
+                                                                <div class="table table-striped" ">
+                                                                    <center>
+                                                                        <input type="hidden" id="hdnId" />
+
+                                                                        <label><font color="purple"><b>Name -</b></font></label>
+                                                                        <input type="text" id="txtName" class="form-control" placeholder=" Enter Your Name" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Email Id -</b></font></label>
+                                                                        <input type="text" id="txtEmail" class="form-control" placeholder=" Enter Your EmailId" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Mobile No -</b></font></label>
+                                                                        <input type="number" id="txtMobile" class="form-control" placeholder=" Enter Your MobileNo" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>City -</b></font></label>
+                                                                        <input type="text" id="txtCity" class="form-control" placeholder=" Enter Your City" style="width:300px" />
+                                                                        <br />
+
+                                                                        <label><font color="purple"><b>Gender -</b></font></label>
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Male</label>
+
+                                                                        <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                                                        <label for="male">Female</label><br /><br />
+
+                                                                        <label><font color="purple"><b>Appointment Date -</b></font></label>
+                                                                        <input type="date" id="txtAppointment" class="form-control" placeholder=" Enter Your Appointment Date" style="width:300px" />
+                                                                        <br />
+
+                                                                        <input type="button" class="btn btn-success" onclick="Savereg()" value="Submit" style="width:100px" />
+                                                                        <br />
+                                                                        <br />
+                                                                    </center>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <!---start-date-piker---->
+                                                    <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                    <script src="~/Content/js/jquery-ui.js"></script>
+                                                    @*<!---/End-date-piker---->*@
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -232,63 +433,80 @@
     @RenderBody()
 
     <!-- book an appointment -->
-    <div class="appointment">
-        <div class="container">
-            <div class="col-md-9 appointment-left">
-                <h3>FREE APPOINTMENT BOOKING</h3>
-                <p>Book your Online Appointment for Consulting.</p>
-            </div>
-            <div class="col-md-3 appointment-right">
-                <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
-                <div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
-                    <div class="modal-dialog dialog_3">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <h4 class="modal-title" id="myModalLabel">
-                                    <div class="head_4">
-                                        <h3>Make An appointment Now</h3>
-                                        <p>
-                                            Id : <asp:Label ID="lblid" Text=""></asp:Label>
-                                        </p>
-                                    </div>
-                                </h4>
-                            </div>
-                            <div class="modal-body">
-                                <div name="row" class="register">
-                                    <asp:TextBox name="name" id="txtname" placeholder="Name" required=""></asp:TextBox>
-                                    <asp:TextBox name="email id" id="txtemailid" placeholder="Email id" required=""></asp:TextBox>
-                                    <asp:TextBox name="mobile number" id="txtmob" placeholder="Mobile Number" required=""></asp:TextBox>
-                                    <asp:TextBox id="txtcity" placeholder="City" required=""></asp:TextBox>
-                                    <asp:RadioButtonList ID="RadioButtonList1" class="form-control "
-                                                         RepeatDirection="Horizontal" RepeatLayout="Flow" Width="200px">
-                                        <asp:ListItem>Male</asp:ListItem>
-                                        <asp:ListItem>Female</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                    <asp:TextBox class="date" id="datepicker" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=""></asp:TextBox>
-                                    <asp:TextBox type="text" id="txtmsg" required=""
-                                                 TextMode="MultiLine"></asp:TextBox>
-                                    <asp:Button ID="btnsubmit" Text="Submit" class="btn-success"
-                                                onclick="btnsubmit_Click" />
+<div class="appointment">
+    <div class="container">
+        <div class="col-md-9 appointment-left">
+            <h3>FREE APPOINTMENT BOOKING</h3>
+            <p>Book your Online Appointment for Consulting.</p>
+        </div>
+        <div class="col-md-3 appointment-right">
+            <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_0">Request an Appointment</a>
+            <div class="modal fade" id="applyModal_0" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                <div class="modal-dialog dialog_3">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="H1">
+                                <div class="head_4">
+                                    <h3>
+                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Make An appointment Now</span>
+                                    </h3>
+                                    <p>
+                                        Id : <label id="txtId" hidden></label>
+                                    </p>
                                 </div>
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div name="row" class="register">
+                                <input type="text" name="name" id="txtName" placeholder="Name" required="" class="form-control btn-outline-primary" />
+
+                                <input type="text" name="email id" id="txtEmail" placeholder="Email id" required="" class="form-control btn-outline-primary" />
+
+                                <input type="text" name="mobile number" id="txtMobile" placeholder="Mobile Number" required="" class="form-control btn-outline-primary" />
+
+                                <input type="text" id="txtCity" placeholder="City" required="" class="form-control btn-outline-primary" />
+
+                                <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                <label for="male">
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Male</span>
+                                </label>
+
+                                <input type="radio" id="txtGender" name="fav_language" value="Female">
+                                <label for="female">
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Female</span>
+                                </label>&nbsp; &nbsp;
+
+                                <input type="date" class="date" id="txtDate" value="Appointment date" required="" /><br />
+
+                                <textarea type="text" id="txtMessage" required=""
+                                          TextMode="MultiLine" class="form-control btn-outline-primary"></textarea>
+
+                                <input type="button" value="submit" style="background-color: #8F44AD; color:white; "
+                                       onclick="SaveAppointment()">
+
                             </div>
-                            <!---start-date-piker---->
-                            <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
-                            <script src="~/Content/js/jquery-ui.js"></script>
-                            <script>
+                        </div>
+                        <!---start-date-piker---->
+                        <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                        <script src="~/Content/js/jquery-ui.js"></script>
+                        @*<script>
                                 $(function () {
                                     $("#datepicker").datepicker();
                                 });
-                            </script>
-                            <!---/End-date-piker---->
-
-                        </div>
+                            </script>*@
+                        <!---/End-date-piker---->
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
         </div>
     </div>
+    <div class="clearfix"></div>
+</div>
+    
     <!-- //book an appointment -->
     <!-- footer -->
     <footer>

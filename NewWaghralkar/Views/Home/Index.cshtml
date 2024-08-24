@@ -227,27 +227,28 @@
                 <ul>
                     <li>Monday - Saturday</li>
 
-                    @*<div class="clearfix"></div>*@
+                    <div class="clearfix"></div>
                 </ul>
                 <ul>
                     <li>Morning</li>
                     <li>10.00 AM - 2.00 PM</li>
-                    @*<div class="clearfix"></div>*@
+                    <div class="clearfix"></div>
                 </ul>
                 <ul>
                     <li>Evening</li>
                     <li>6.00 PM - 8.30 PM</li>
-                    @*<div class="clearfix"></div>*@
+                    <div class="clearfix"></div>
                 </ul>
                 <ul>
                     <li>Sunday</li>
                     <li>Closed</li>
-                    @*<div class="clearfix"></div>*@
+                    <div class="clearfix"></div>
                 </ul>
             </div>
             <div class="help">
                 <h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
                 <p>Just Make an Appointment to Get Help From Our Experts</p>
+
                 <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
                 <div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
                     <div class="modal-dialog dialog_3">
@@ -256,41 +257,53 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                 <h4 class="modal-title" id="H1">
                                     <div class="head_4">
-                                        <h3>Make An appointment Now</h3>
+                                        <h3>
+                                            <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Make An appointment Now</span>
+                                        </h3>
                                         <p>
-                                            Id : <label id="txtId" hidden></label>
+                                            <label id="txtId" hidden></label>
                                         </p>
                                     </div>
                                 </h4>
                             </div>
                             <div class="modal-body">
                                 <div name="row" class="register">
-                                    <input type="text" name="name" id="txtName" placeholder="Name" required="" />
-                                    <input type="text" name="email id" id="txtEmail" placeholder="Email id" required="" />
-                                    <input type="text" name="mobile number" id="txtMobile" placeholder="Mobile Number" required="" />
-                                    <input type="text" id="txtCity" placeholder="City" required="" />
+                                    <input type="hidden" id="hdnId" />
+                                    <input type="text" id="txtappotName" placeholder="Name" required="" class="form-control btn-outline-primary" />
+
+                                    <input type="text" id="txtappotEmail" placeholder="Email id" required="" class="form-control btn-outline-primary" />
+
+                                    <input type="text" id="txtappotMobile" placeholder="Mobile Number" required="" class="form-control btn-outline-primary" />
+
+                                    <input type="text" id="txtappotCity" placeholder="City" required="" class="form-control btn-outline-primary" />
+
                                     <input type="radio" id="txtGender" name="fav_language" value="Male">
-                                    <label for="male">Male</label>
-                                    <input type="radio" id="txtGender" name="fav_language" value="Female">
-                                    <label for="female">Female</label>&nbsp; &nbsp;
-                                    <input type="date" class="date" id="txtDate" value="Appointment date" required="" />
+                                    <label for="male">
+                                        <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;&quot;serif&quot;mso-fareast-font-family:&quot;Times New Roman&quot;">Male</span>
+                                    </label>
+
+                                    <input type="radio" id="txtGender" name="fav_language" value="Male">
+                                    <label for="female">
+                                        <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;&quot;serif&quot;mso-fareast-font-family:&quot;Times New Roman&quot;">Female</span>
+                                    </label>&nbsp; &nbsp;
+
+                                    <input type="date" class="date" id="txtDate" value="Appointment date" class="form-control btn-outline-primary" required="" /><br />
 
                                     <textarea type="text" id="txtMessage" required=""
-                                              TextMode="MultiLine"></textarea>
-                                    <button id="btnsubmit" type="submit" style="background-color: #8F44AD; color:white; "
-                                            onclick="SaveAppointment()">
-                                        Submit
-                                    </button>
+                                              TextMode="MultiLine" class="form-control btn-outline-primary"></textarea>
+
+                                    <input type="button" value="submit" style="background-color: #8F44AD; color:white;" onclick="SaveAppointment()">
+
                                 </div>
                             </div>
                             <!---start-date-piker---->
                             <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
                             <script src="~/Content/js/jquery-ui.js"></script>
                             @*<script>
-                                $(function () {
-                                    $("#datepicker").datepicker();
-                                });
-                            </script>*@
+                                    $(function () {
+                                        $("#datepicker").datepicker();
+                                    });
+                                </script>*@
                             <!---/End-date-piker---->
                         </div>
                     </div>
@@ -298,7 +311,7 @@
             </div>
         </div>
         <div class="col-md-4 abt-img">
-            <img src="~/Content/images/" alt="doctor" title="doctor" />
+            <img src="~/Content/images/JLordDhanvantari.png" alt="doctor" title="doctor" />
         </div>
         <div class="col-md-4 abt-dec">
             <h2> Dr.GopalKrishna Waghralkar</h2>
@@ -328,7 +341,6 @@
     <section class="happy-patients">
         <div class="container">
             <div class="happy-patients-head text-center">
-
                 <h4>About Doctors</h4>
             </div>
             <div class="happy-patients-grids">
@@ -447,7 +459,7 @@
                                     research work done continuously.
                                 </p>
 
-                                <a href="About.aspx">Read More</a>
+                                <a href="~/About/AboutHospital">Read More</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -461,9 +473,7 @@
                             <div class="ser-info">
                                 <h3>PHARMACY AND PRODUCTION CENTRE</h3>
                                 <p>
-                                    Waghralkar Hospital does not depend only on the medicines that are already available.
-                                    The research centre has a special Pharmacy Department which is constantly engaged in
-                                    upgrading knowledge and exploring new formulations for providing Quality treatment.Having his own pharmacy and production centre.
+                                    Waghralkar Hospital does not depend only on the medicines that are already available.The research centre has a special Pharmacy Department which is constantly engaged in upgrading knowledge and exploring new formulations for providing Quality treatment.Having his own pharmacy and production centre.
                                 </p>
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
@@ -493,7 +503,7 @@
                                 <p>
                                     Music is closely associated with nature. It will also not be wrong to say that the origin of nature is through sound. And atoms always establish communication with each other. Wherever there is motion there always is a sound, states the law of science. And in absence of sound, the nature would not have been created. This slows the importance of sound in the creation of this nature.
                                 </p>
-                                <a href="Therapy.aspx">Read More</a>
+                                <a href="~/Services/MusicAromaTherapy">Read More</a>
 
                             </div>
                             <div class="clearfix"></div>
@@ -513,7 +523,7 @@
                                 <h3>MASSAGE</h3>
                                 <P>AYURVEDIC ABHYANGA, PINDA SWEDA, SHIRODHARA, NETHRA THARPANAM</P>
                                 <h3>BASTI</h3><p>Kati Basti, Janu Basti</p>
-                                <a href="Treatment.aspx">Read More</a>
+                                <a href="~/Services/Treatments">Read More</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -534,9 +544,9 @@
                                     </b>.
                                 </p>
 
-                                <a href="Quantum.aspx">Jan 2016</a>
-                                <a href="Quantum.aspx">Apr 2016</a>
-                                <a href="Quantum.aspx">July 2016</a>
+                                <a href="~/Services/QuantumHealing">Jan 2016</a>
+                                <a href="~/Services/QuantumHealing">Apr 2016</a>
+                                <a href="~/Services/QuantumHealing">July 2016</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -577,7 +587,7 @@
     </div>
 </div>
 
-<<<<<<< HEAD
+
 <!-- //quick links -->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -590,23 +600,14 @@
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     })();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6683b4a6eaf3bd8d4d171607/1i1p7jb5f';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
 </script>
-<!--End of Tawk.to Script-->
-=======
-    <!-- //quick links -->
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6683b4a6eaf3bd8d4d171607/1i1p7jb5f';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
->>>>>>> 2c29829a61ac727e0525b40874c2d7854dcd184c

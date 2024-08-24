@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "AwardsIndex";
 }
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/Award.js"></script>
+@*<link href="~/Content/css/CSS-5.css" rel="stylesheet" />*@
+
+
 
 @*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
         <h2>Awards</h2>
@@ -33,57 +38,141 @@
 
 
 <style>
-    h3:hover, h3:active {
-        color: orange;
-    }
+        h3:hover, h3:active {
+            color: orange;
+        }
 
-    .col-md-2 {
-        width: 2.666667%;
-    }
-</style>
-<section class="about">
-    <div class="about-grids">
-        <div class="container">
-            <div class="col-md-12">
-                <div class="row ">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-9">
-                        <section class="">
-                            <div class="">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="col-md-4 abt-grid">
-                                                <h3>Asia pacific award</h3>
-                                                <div class="clearfix"></div>
-                                                <p>Asia pacific award</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="col-md-4 abt-grid">
-                                                <h3>Asias Huj-hu of Men and Women of Achievement award</h3>
-                                                <div class="clearfix"></div>
-                                                <p>Asias Huj-hu of Men and Women of Achievement award</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="col-md-4 abt-grid">
-                                                <h3>Awards and medals in Indian classical singing</h3>
-                                                <div class="clearfix"></div>
-                                                <p>for classical singing</p>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+        .col-md-2 {
+            width: 2.666667%;
+        }
+    </style>
+    <section class="about">
+        <div class="about-grids">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Asia pacific award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Asia pacific award</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Asias Huj-hu of Men and Women of Achievement award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Asias Huj-hu of Men and Women of Achievement award</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Awards and medals in Indian classical singing</h3>
+                                            <div class="clearfix"></div>
+                                            <p>for classical singing</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Ekatmata award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Ekatmata award</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Indo American Huj-hu award award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Indo American Huj-hu award award</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Indo Asian Huj-hu award award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Indo Asian Huj-hu award award</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Outstanding young Indian award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>from Indian Junior Chember</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Pt. Jawaharlal Nehru Award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Pt. Jawaharlal Nehru Award</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Ramai Award</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Ramai Award</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3>Vaidya Laxmibai Borwankar 'Stri Vaidya' Award 2010</h3>
+                                            <div class="clearfix"></div>
+                                            <p>Vaidya Laxmibai Borwankar 'Stri Vaidya' Award 2010</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3></h3>
+                                            <div class="clearfix"></div>
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4 abt-grid">
+                                            <h3></h3>
+                                            <div class="clearfix"></div>
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
 
-                            </div>
-                        </section>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
-         </div>
-    </div>
-</section>
+        </div>
+    </section>
+
+
+    @*<table id="Awards" class=" table table-bordered  ">
+        <thead class=" text-white bg-dark ">
+            <tr>
+                <th> Srno </th>
+                <th> ActiveId </th>
+                <th> Title </th>
+                <th> Details </th>
+                <th> Image1</th>
+                <th> Image2 </th>
+                <th> Type </th>
+                <th> Date </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>*@
+
 
 @*<div class="container">
         <div class="col-md-4 abt-grid">

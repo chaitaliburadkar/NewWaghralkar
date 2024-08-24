@@ -22,8 +22,7 @@ namespace NewWaghralkar.Models
         {
             var message = "Appointment booked successfully!";
             WaghralkarEntities db = new WaghralkarEntities();
-
-            var data = new mytable()
+            var data = new Appointment()
             {
                 Id = model.Id,
                 Name = model.Name,
@@ -32,11 +31,41 @@ namespace NewWaghralkar.Models
                 Mobile = model.Mobile,
                 Date = model.Date,
                 Gender = model.Gender,
-                Message = model.Message,
+                Message = model.Message
             };
-            db.mytables.Add(data);
+            db.Appointments.Add(data);
             db.SaveChanges();
             return message;
         }
+        public List<AppointmentModel> GetAppointmentList()
+        {
+            WaghralkarEntities Db = new WaghralkarEntities();
+            List<AppointmentModel> lstAppointment = new List<AppointmentModel>();
+            var AddAppointmentList = Db.Appointments.ToList();
+            int Srno = 1;
+            if (AddAppointmentList != null)
+            {
+                foreach (var Appointment in AddAppointmentList)
+                {
+                    lstAppointment.Add(new AppointmentModel()
+                    {
+
+                        Id = Appointment.Id,
+                        Name = Appointment.Name,
+                        Email = Appointment.Email,
+                        City = Appointment.City,
+                        Mobile = Appointment.Mobile,
+                        Date = Appointment.Date,
+                        Gender = Appointment.Gender,
+                        Message = Appointment.Message
+                    });
+                    Srno++;
+                }
+            }
+            return lstAppointment;
+        }
+
     }
 }
+
+    

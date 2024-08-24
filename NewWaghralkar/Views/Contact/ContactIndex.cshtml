@@ -2,10 +2,13 @@
 @{
     ViewBag.Title = "ContactIndex";
 }
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/Contact.js"></script>
+
 
 @*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-    <h2>Contact Us</h2>
-</asp:Content>*@
+        <h2>Contact Us</h2>
+    </asp:Content>*@
 
 <section class="about">
     <div class="inner-banner demo-2 text-center">
@@ -35,9 +38,12 @@
     <div class="contact">
         <div class="container">
             <div class="map">
-                <style>h4 {font-family: "Time new roman";
-                           letter-spacing:normal;
-}</style>
+                <style>
+                    h4 {
+                        font-family: "Time new roman";
+                        letter-spacing: normal;
+                    }
+                </style>
                 <h4>GET IN TOUCH</h4>
                 <p class="MsoNormal" style="text-align: justify">
                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
@@ -51,17 +57,87 @@ mso-fareast-font-family:&quot;Times New Roman&quot;">
                         </br></br>1. Google Maps Integrate Satellite Imagery Google Maps also incorporates the use of satellite imagery to provide users with greater detail of the area. The street view is amazingly accurate and precise. This was made possible by Google's vans that acquire information by driving roads and also by acquiring panoramic photos. Users can get maps of and driving directions to almost any location around the world.<o:p></o:p>
                     </span>
                 </p></br></br></br>
-                <div id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22638.205309719353!2d79.06589999960634!3d21.109434075403026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf7987e4368b%3A0x5c01987391051c!2sWaghralkar%20Hospital%20%26%20Research%20Institute!5e0!3m2!1sen!2sin!4v1719397631714!5m2!1sen!2sin" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>@*, Nagpur, &z=14&t=" width="1000" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a class="addmaps" href="http://www.map-embed.com" id="get-map-data" mce_href="http://maps.google.com/maps/api/js?sensor=false">West Samarth Nagar, Near Ajni Square, Samarth Nagar, Wardha Road, Nagpur, </a></iframe>*@
+
+                <div class="brand_color">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titlepage">
+                                    <div class="contact-infom">
+                                        <h4>CONTACT US</h4>
+                                    </div><br />
+
+
+                                    <section id="contact" class="contact">
+                                        <div class="container  col-sm-12">
+
+                                            <div class="row" data-aos="fade-up">
+
+
+                                                <div class="col-lg-6">
+                                                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                                        <div class="row">
+                                                            
+                                                            <input type="hidden" name="id" class="form-control" id="hdnId" required>
+                                                            
+                                                            <div class="col-md-6 form-group">
+                                                                <input type="text" name="name" class="form-control" id="txtName" placeholder="Your Name" required>
+                                                            </div>
+                                                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                                                <input type="email" class="form-control" name="email" id="txtEmail" placeholder="Your Email" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <input type="text" class="form-control" name="subject" id="txtSubject" placeholder="Subject" required>
+                                                        </div>
+                                                        <div class="form-group mt-3">
+                                                            <textarea type="text" class="form-control" name="message" id="txtMessage" placeholder="Message" required></textarea>
+                                                        </div>
+                                                        <div class="my-3">
+
+                                                            <div class="error-message"></div>
+
+                                                        </div>
+
+
+                                                        @*<div class="text-center">
+                                                            <button onclick="myFunction()" type="submit" class="btn btn-primary">Send Message</button>
+                                                            <script>
+                                                                function myFunction() {
+                                                                    alert("Sucessfully done !");
+                                                                }</script><hr />
+                                                        </div>*@
+                                                    </form>
+
+
+
+                                                    <style>
+                                                        button {
+                                                            background-color: #fff;
+                                                        }
+                                                    </style>
+                                                    <input type="button" class="btn btn-success" onclick="Savereg()" value="Submit" width="1000px" />
+                                                </div>
+                                                <div class="col-lg-6 ">
+
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22638.205309719353!2d79.06589999960634!3d21.109434075403026!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf7987e4368b%3A0x5c01987391051c!2sWaghralkar%20Hospital%20%26%20Research%20Institute!5e0!3m2!1sen!2sin!4v1719397631714!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </section><!-- End Contact Section -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="contact-infom">
-                <h4>CONTACT INFO</h4>
-            </div>
+
             <div class="address">
                 <div class="row">
                     <div class="col-md-6 location">
-                        <h4>Address1 :</h4>
+                        <h4>Address :</h4>
                         <ul>
                             <li><i class="fa fa-map-marker"></i><p><b>Waghralkar Ayurved Hospital & Research Center, <span>47, West Samarth Nagar, Ajani Square</span>Nagpur - 440015(MS) India</b></p><div class="clearfix"></div> </li>
                             <li><i class="fa fa-phone"></i><p><b>0712 2250141</b></p> <div class="clearfix"></div> </li>
@@ -75,6 +151,10 @@ mso-fareast-font-family:&quot;Times New Roman&quot;">
 
 </asp:Content>
 </br></br>
+
+
+
+
 
 
 

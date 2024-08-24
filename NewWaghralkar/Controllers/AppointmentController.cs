@@ -14,6 +14,10 @@ namespace NewWaghralkar.Controllers
         {
             return View();
         }
+        public ActionResult AppointmentIndex()
+        {
+            return View();
+        }
 
         public ActionResult SaveAppointment(AppointmentModel model)
         {
@@ -23,7 +27,18 @@ namespace NewWaghralkar.Controllers
             }
             catch(Exception ex)
             {
-                return Json( new {model = ex.Message}, JsonRequestBehavior.AllowGet);
+                return Json( new { ex.Message}, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult GetAppointmentList()
+        {
+            try
+            {
+                return Json(new { model = new AppointmentModel().GetAppointmentList() }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { model = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
     }

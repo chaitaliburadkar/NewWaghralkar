@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "AddNewsIndex";
+    Layout = "~/Views/Shared/AdminLayout .cshtml";
+}
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/News.js"></script>
+
+<section class="content-header" style="margin-left:20px">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h2>Add News</h2>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">General Form</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content" style="margin-left:20px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header" style="background-color:cornflowerblue;">
+                    <h3 class="card-title">Quick Example</h3>
+                </div>
+                <div class="table table-striped" style="background:padding-box; padding-left:20px;padding-right:15px;">
+                    <input type="hidden" id="hdnid" />
+
+                    <label>Enter News Title:</label>
+                    <input type="text" id="txtTitle" placeholder="Enter News Title" class="form-control" />
+                    <br />
+
+                    <label>Type:</label>
+                    <input type="text" id="txtType" placeholder="Type" class="form-control" />
+                    <br />
+
+                    <label>Enter News Details:</label>
+                    <input type="text" id="txtDetails" placeholder="Enter News Details" class="form-control" />
+                    <br />
+
+                    <label>Date:</label>
+                    <input type="date" id="date" placeholder="Date" class="form-control" />
+                    <br />
+
+                    <label>Image1:</label>
+                    <input type="file" id="txtImage1" class="form-control" />
+                    <br />
+
+                    <label>Image2:</label>
+                    <input type="file" id="txtImage2" class="form-control" />
+                    <br />
+
+                    <input type="button" value="Submit" class="btn btn-success" onclick="SaveNews()" /><br><br />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content" style="margin-left:20px">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <table id="tbl_AddNews" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Enter_News_Title</th>
+                                <th> Type </th>
+                                <th> Enter_News_Details </th>
+                                <th> Date </th>
+                                <th>Choose1File</th>
+                                <th>Choose2File</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

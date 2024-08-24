@@ -1,0 +1,130 @@
+﻿
+@model NewWaghralkar.Models.RegistrationModel
+@{
+    ViewBag.Title = "MultiuserIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    Layout = null;
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Content/css")
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/Registration.js"></script>
+
+<body>
+    @using (Html.BeginForm("UserLogin", "Multiuser", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="clear">
+            <section class="vh-100" style="background-color:lightblue;">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+
+                                    <h3 class="mb-5">LOGIN HERE</h3>
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label class="form-label" for="typeemailX-2">Email</label>
+                                        <center>
+                                            @Html.TextBoxFor(a => a.Email, new { @class = "form-control", @style = "margin-left:32px" })
+                                        </center>
+                                        @*@Html.TextBoxFor(a => a.Email, new { @class = "form-control", @style = "margin-left:32px" })*@
+
+                                    </div><br />
+
+
+
+                                    <div data-mdb-input-init class="form-outline">
+                                        <label class="form-label" for="typePasswordX-2">Password</label>
+                                        <center>
+                                            @Html.TextBoxFor(a => a.Password, new { @class = "form-control", @style = "margin-left:32px" })
+                                        </center>
+                                    </div><br />
+
+                                    <div class="form-check d-flex justify-content-start" style="margin-left:32px">
+                                        <input class="form-check-input" type="checkbox" value="" id="form1Example3" />&nbsp;
+                                        <label class="form-check-label" for="form1Example3"> Remember password </label>
+                                    </div><br /><br />
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary py-2 px-5" type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary py-2 px-5" type="submit"> <a href="../Registration/RegistrationIndex" class="nav-item nav-link active">Sign-Up</a></button>
+                                    <a href="#" class="btn btn-primary btn-default_2 pull-center" data-toggle="modal" data-target="#applyModal_9"> Sign-Up </a>
+                                    <div class="modal fade" id="applyModal_9" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="head_4">
+                                                            <h3>
+                                                                <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;">Book Now</span>
+                                                            </h3>
+                                                        </div>
+                                                    </h4>
+                                                    <div class="modal-body">
+                                                        <div name="row" class="register">
+                                                            <div class="table table-striped" ">
+                                                                <form id="form_id">
+
+                                                                    <input type="hidden" id="hdnid" />
+
+                                                                    <h3>Cust_Name</h3>
+                                                                    <input type="text" id="txtname" placeholder="Enter Name" class="form-control" style="width:300px" /><br />
+
+                                                                    <h3>Contact_No</h3>
+                                                                    <input type="number" id="txtno" placeholder="Enter Number" class="form-control" style="width:300px" /><br />
+
+                                                                    <h3>Email</h3>
+                                                                    <input type="text" id="txtemail" placeholder="Enter Email" class="form-control" style="width:300px" /><br />
+
+                                                                    <h3>Password</h3>
+                                                                    <input type="text" id="txtpass" placeholder="Enter Password" class="form-control" style="width:300px" /><br />
+
+                                                                    <h3>Status</h3>
+                                                                    <input type="number" id="txtstatus" placeholder="Enter Status" class="form-control" style="width:300px" /><br /><br />
+
+                                                                    <input type="button" value="submit" Onclick="SaveForm()" class="btn btn-success" style="width:200px" />&nbsp;
+
+                                                                    <input type="button" value="Reset" Onclick="newFunction()" class="btn btn-danger" style="width:200px" /><br />
+
+                                                                </form>
+                                                                <script>
+                                                                    function newFunction() {
+                                                                        var element = document.getElementById("form_id");
+                                                                        element.reset()
+                                                                    }
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    }
+</body>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WaghralkarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WaghralkarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="Title" />
@@ -24,6 +24,19 @@
           <Property Name="user" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PWD" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="25" />
+          <Property Name="Date" Type="nvarchar" MaxLength="20" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="Message" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Award">
           <Key>
@@ -48,6 +61,18 @@
           <Property Name="Image2" Type="nvarchar" MaxLength="50" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookNow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Appointment_date" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Brand_Master">
           <Key>
@@ -195,6 +220,21 @@ warning 6002: The table/view 'Waghralkar.dbo.Issue_Master' does not have a prima
           <Property Name="Date" Type="nvarchar" MaxLength="20" />
           <Property Name="Gender" Type="nvarchar" MaxLength="10" />
           <Property Name="Message" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Waghralkar.dbo.mytables' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mytables">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Message" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Waghralkar.dbo.Order1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -345,6 +385,28 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
           <Property Name="App_Form" Type="date" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="5" Nullable="false" />
         </EntityType>
+        <EntityType Name="tbl_AddNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Enter_News_Title" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Enter_News_Details" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Choose1File" Type="nvarchar" MaxLength="50" />
+          <Property Name="Choose2File" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblcontact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar(max)" />
+          <Property Name="Message" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Type_Master">
           <Key>
             <PropertyRef Name="Type_Id" />
@@ -376,8 +438,10 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
         <EntityContainer Name="WaghralkarModelStoreContainer">
           <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookNow" EntityType="Self.BookNow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Brand_Master" EntityType="Self.Brand_Master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ItemData" EntityType="Self.ItemData" Schema="dbo" store:Type="Tables" />
@@ -391,6 +455,8 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
           <EntitySet Name="Sub_Category2" EntityType="Self.Sub_Category2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sub_Category3" EntityType="Self.Sub_Category3" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tax_Master" EntityType="Self.Tax_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AddNews" EntityType="Self.tbl_AddNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblcontact" EntityType="Self.tblcontact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Type_Master" EntityType="Self.Type_Master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit_Master" EntityType="Self.Unit_Master" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Videogallery" EntityType="Self.Videogallery" Schema="dbo" store:Type="Tables" />
@@ -428,6 +494,18 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
     [Issue_Master].[Data1] AS [Data1], 
     [Issue_Master].[Status] AS [Status]
     FROM [dbo].[Issue_Master] AS [Issue_Master]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="mytables" EntityType="Self.mytables" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [mytables].[Id] AS [Id], 
+    [mytables].[Name] AS [Name], 
+    [mytables].[Email] AS [Email], 
+    [mytables].[City] AS [City], 
+    [mytables].[Mobile] AS [Mobile], 
+    [mytables].[Date] AS [Date], 
+    [mytables].[Gender] AS [Gender], 
+    [mytables].[Message] AS [Message]
+    FROM [dbo].[mytables] AS [mytables]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Order1" EntityType="Self.Order1" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -468,8 +546,7 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
     FROM [dbo].[SpecialOffer] AS [SpecialOffer]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WaghralkarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -856,7 +933,72 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
           <EntitySet Name="Order1" EntityType="Self.Order1" />
           <EntitySet Name="Sitem_Master" EntityType="Self.Sitem_Master" />
           <EntitySet Name="SpecialOffers" EntityType="Self.SpecialOffer" />
+          <EntitySet Name="tblcontacts" EntityType="WaghralkarModel.tblcontact" />
+          <EntitySet Name="BookNows" EntityType="WaghralkarModel.BookNow" />
+          <EntitySet Name="mytables1" EntityType="WaghralkarModel.mytable1" />
+          <EntitySet Name="Appointments" EntityType="WaghralkarModel.Appointment" />
+          <EntitySet Name="tbl_AddNews" EntityType="WaghralkarModel.tbl_AddNews" />
         </EntityContainer>
+        <EntityType Name="tblcontact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BookNow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Appointment_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mytable1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_AddNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Enter_News_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Enter_News_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Choose1File" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Choose2File" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1209,6 +1351,71 @@ warning 6002: The table/view 'Waghralkar.dbo.SpecialOffer' does not have a prima
                 <ScalarProperty Name="Offer_Type" ColumnName="Offer_Type" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblcontacts">
+            <EntityTypeMapping TypeName="WaghralkarModel.tblcontact">
+              <MappingFragment StoreEntitySet="tblcontact">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookNows">
+            <EntityTypeMapping TypeName="WaghralkarModel.BookNow">
+              <MappingFragment StoreEntitySet="BookNow">
+                <ScalarProperty Name="Appointment_date" ColumnName="Appointment_date" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mytables1">
+            <EntityTypeMapping TypeName="WaghralkarModel.mytable1">
+              <MappingFragment StoreEntitySet="mytables">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="WaghralkarModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AddNews">
+            <EntityTypeMapping TypeName="WaghralkarModel.tbl_AddNews">
+              <MappingFragment StoreEntitySet="tbl_AddNews">
+                <ScalarProperty Name="Choose2File" ColumnName="Choose2File" />
+                <ScalarProperty Name="Choose1File" ColumnName="Choose1File" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Enter_News_Details" ColumnName="Enter_News_Details" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Enter_News_Title" ColumnName="Enter_News_Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "NewsIndex";
 }
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Content/News.js"></script>
 
 @*<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
         <h2>News</h2>
@@ -40,60 +42,100 @@
                     <ItemTemplate>
                         <table width="1200">
                             <tr>
-                                <td width="600">
-                                    <img src="~/Content/img/garbhasankarimage1.jpg" Height="350px" Width="10px" /><br /><br />
+                                <td width="400">
+                                    <img src="~/Content/img/garbhasankarimage1.jpg" Height="250px" Width="10px" /><br /><br />
                                     <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Garbhsanskar Shibir on 20 June 2024</font></span><br />
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">15/6/2024</span>
 
                                     <div class="clearfix"></div>
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Garbhsanskar Shibir on 20 June 2024 for pregnant womens</span><br /><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
-                                </td>&nbsp;&nbsp;
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">MORE</a>
 
-                                <td width="600">
-                                    <img src="~/Content/images/DrGopal.jpg" Height="350px" Width="10px" /><br /><br />
+                                    <div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/img/garbhasankarimage1.jpg" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Garbhsanskar Shibir on 20 June 2024</font></span><br />
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>15/6/2024</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">
+                                                                    Garbhsanskar Shibir on 20 June 2024 for pregnant womens. Garbh means womb and sanskar means teaching good things or instilling good values. So Garbh Sanskar means educating an unborn child.
+
+                                                                    Garbh Sanskar is the practice of a few simple activities that contribute towards social, physical , spiritual, mental well-being of both mother and child. With the benefit of scientific research, it is well-proven now that the baby, when in the womb, has infinite capacity to grow his or her mind and senses if the right external stimulation is given. The baby is not an ‘object’ lying in the womb but a smart, and receptive human-in-development.
+
+                                                                    The right stimulation from the external world, mainly by the mother, can make a huge development in its mental growth.
+                                                                </span><br /><br />
+
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>&nbsp;&nbsp;&nbsp;
+
+                                <td width="400">
+                                    <img src="~/Content/images/DrGopal.jpg" Height="250px" Width="10px" /><br /><br />
                                     <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Publication of Book of Late Dr. Gopalkrushna Waghralkar ("U Need No Medicine")</font></span><br />
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">08/06/2007</span>
                                     <div class="clearfix"></div>
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Publication of Book of Late Dr. Gopalkrushna Waghralkar ("U Need No Medicine") यू नीड नो मेडिसिन and ("Arogya Pravachan") आरोग्य प्रवचन</span><br /><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
-                                </td>
-                            </tr>
-                        </table>&nbsp;&nbsp;
-
-                        <table width="1200">
-                            <tr>
-                                <td width="600">
-                                    <img src="~/Content/img/Screenshot 2024-05-27 203706.png" Height="350px" Width="50px" />
-                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;"><font color="Purple">Key Highlights</font></span></br>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;">27/5/2024</span>
-
-                                    <div class="clearfix"></div>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;">Some Key Highlights</span><br /><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
-                                </td>&nbsp;&nbsp;
-
-                                <td width="600">
-                                    <img src="~/Content/images/1.JPG" Height="350px" Width="200px" />
-                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;"><font color="Purple">Ramdevbaba visit to Hospital for Ayurvedic Lecture</font></span></br>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;"> 30/10/2006</span>
-                                    <div class="clearfix"></div>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;">Ramdevbaba visit to Hospital for Ayurvedic Lecture</span></br><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
-                                </td>
-                            </tr>
-                        </table>&nbsp;&nbsp;
-
-                        <table width="1200">
-                            <tr>
-                                <td width="600">
-                                    <img src="~/Content/images/news4-4.jpg" Height="350px" Width="10px" /><br /><br />
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_2">MORE</a>
+                                    <div class="modal fade" id="applyModal_2" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/images/DrGopal.jpg" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Publication of Book of Late Dr. Gopalkrushna Waghralkar ("U Need No Medicine")</font></span><br />
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>08/06/2007</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Publication of Book of Late Dr. Gopalkrushna Waghralkar ("U Need No Medicine") यू नीड नो मेडिसिन and ("Arogya Pravachan") आरोग्य प्रवचन</span><br /><br />
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>&nbsp;&nbsp;&nbsp;
+                                <td width="400">
+                                    <img src="~/Content/images/news1.jpg" Height="250px" Width="10px" /><br /><br />
                                     <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
 &quot;Times New Roman&quot;"><font color="Purple">Late Dr. Gopalkrushna Waghralkar Program with the presence of Mohanaji Bhagawat</font></span></br>
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
@@ -102,24 +144,189 @@
                                     <div class="clearfix"></div>
                                     <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
 &quot;Times New Roman&quot;">Dr. Gopalkrushna Waghralkar Jayanti with the presence of Mohanaji Bhagawat</span><br /><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
-                                </td>&nbsp;&nbsp;
-
-                                <td width="600">
-                                    <img src="~/Content/images/book6.jpg" Height="350px" Width="10px" /><br /><br />
-                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;"><font color="Purple">Publication of Book by Mr. L. K. Advani on Panchkarma</font></span></br>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;"> 06/12/2001</span>
-                                    <div class="clearfix"></div>
-                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
-&quot;Times New Roman&quot;">Publication of Book by Mr. L. K. Advani on Panchkarma and Dr. Gopalkrushna Waghralkar</span><br /><br />
-                                    <a href="~/Content/BlogDet.aspx" class="smore">MORE</a>
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_3">MORE</a>
+                                    <div class="modal fade" id="applyModal_3" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/images/news1.jpg" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Late Dr. Gopalkrushna Waghralkar Program with the presence of Mohanaji Bhagawat</font></span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>08/5/2013</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Dr. Gopalkrushna Waghralkar Jayanti with the presence of Mohanaji Bhagawat</span><br /><br />
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
+
+                        <table width="1200">
+                            <tr>
+                                <td width="400">
+                                    <img src="~/Content/images/book6.jpg" Height="250px" Width="10px" /><br /><br />
+                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Publication of Book by Mr. L. K. Advani on Panchkarma</font></span></br>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"> 06/12/2001</span>
+                                    <div class="clearfix"></div>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Publication of Book by Mr. L. K. Advani on Panchkarma and Dr. Gopalkrushna Waghralkar</span><br /><br />
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_4">MORE</a>
+                                    <div class="modal fade" id="applyModal_4" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/images/book6.jpg" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Publication of Book by Mr. L. K. Advani on Panchkarma</font></span></br>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>06/12/2001</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Publication of Book by Mr. L. K. Advani on Panchkarma and Dr. Gopalkrushna Waghralkar</span><br /><br />
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>&nbsp;&nbsp;&nbsp;
+                                <td width="400">
+                                    <img src="~/Content/img/Screenshot 2024-05-27 203706.png" Height="250px" Width="50px" />
+                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><font color="Purple">Key Highlights</font></span></br>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;">27/5/2024</span>
+
+                                    <div class="clearfix"></div>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;">Some Key Highlights</span><br /><br />
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_5">MORE</a>
+                                    <div class="modal fade" id="applyModal_5" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/img/Screenshot 2024-05-27 203706.png" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Key Highlights</font>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>27/5/2024</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Some Key Highlights</span><br /><br />
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>&nbsp;&nbsp;&nbsp;
+
+                                <td width="400">
+                                    <img src="~/Content/images/1.JPG" Height="300px" Width="600px" />
+                                    <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><font color="Purple">Ramdevbaba visit to Hospital for Ayurvedic Lecture</font></span></br>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;"> 30/10/2006</span>
+                                    <div class="clearfix"></div>
+                                    <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;">Ramdevbaba visit to Hospital for Ayurvedic Lecture</span></br><br />
+                                    <a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_6">MORE</a>
+                                    <div class="modal fade" id="applyModal_6" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog dialog_3">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="H1">
+                                                        <div class="modal-body packages">
+                                                            <div class="col-md-12 text-center modal-align">
+                                                                <div class="package">
+                                                                    <img src="~/Content/images/1.JPG" style="width: 450px; height: 300px; " /><br />
+                                                                    <p>
+                                                                        <span style="font-size:18.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;"><font color="Purple">Ramdevbaba visit to Hospital for Ayurvedic Lecture</font></span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="grid-single">
+                                                                    <div class="single-one"><span><i class="fa fa-calendar"></i>30/10/2006</div></li>
+                                                                    <div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+                                                                    <div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+                                                                    <div class="clearfix"> </div>
+                                                                </div><br />
+                                                                <span style="font-size:12.0pt;font-family:Cambria; Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:&quot;Times New Roman&quot;">Ramdevbaba visit to Hospital for Ayurvedic Lecture</span></br><br />
+                                                            </div>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <!---start-date-piker---->
+                                                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+                                                <script src="~/Content/js/jquery-ui.js"></script>
+                                                @*<!---/End-date-piker---->*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>&nbsp;&nbsp;
+
+                        <table width="1200">
+                            <tr>
+                                
+                            </tr>
+                        </table>&nbsp;&nbsp;
+
+
                         <ItemTemplate>
-                </asp:DataList>
+</asp:DataList>
             </div>
 
             <div class="clearfix"></div>
@@ -129,6 +336,20 @@
 </asp:Content>
 </br></br>
 
-
+@*<table id="tbl_AddNews" class=" table table-bordered"style="background-color:black">
+    <thead class=" text-white bg-dark ">
+        <tr>
+            <th> Srno </th>
+            <th> Id </th>
+            <th> Enter_News_Title </th>
+            <th> Type </th>
+            <th> Enter_News_Details</th>
+            <th> Date </th>
+            <th> Choose1File </th>
+            <th> Choose2File </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>*@
 
 

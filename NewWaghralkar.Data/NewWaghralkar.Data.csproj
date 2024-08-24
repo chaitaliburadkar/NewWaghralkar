@@ -56,10 +56,16 @@
     <Compile Include="admin.cs">
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Award.cs">
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Blog.cs">
+      <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookNow.cs">
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Brand_Master.cs">
@@ -84,6 +90,9 @@
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="mytable.cs">
+      <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mytable1.cs">
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="NewWaghralkarEntity.Context.cs">
@@ -133,6 +142,12 @@
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Tax_Master.cs">
+      <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblcontact.cs">
+      <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_AddNews.cs">
       <DependentUpon>NewWaghralkarEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Type_Master.cs">
